@@ -5,3 +5,11 @@
 // $tablet-2: 992;
 // $desktop: 1230;
 
+%montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+//burger-menu
+$burgerWidth: 24px; //ширина линий - 40px
+$burgerHeight: 18px; //высота линий - 25px
+$burgerLineHeight: 2px; //расстояние между ними - 2px
+$burgerColor: #000; //цвет - белый
