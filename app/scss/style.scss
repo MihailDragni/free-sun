@@ -44,8 +44,8 @@
     width: 44px;
     height: 44px;
     &::after {
-      content: '';;
-      mask-image: url('../images/svg-images/arrow-down.svg');
+      content: "";
+      mask-image: url("../images/svg-images/arrow-down.svg");
       background-color: #fff;
       width: 44px;
       height: 44px;
@@ -78,5 +78,127 @@
   &__text {
     padding-top: 5px;
     font-size: 12px;
+  }
+}
+
+.footer {
+  background-color: #151515;
+  &__top {
+    border-top: 1px solid #a4a4a4;
+    padding: 50px 0 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__copyright {
+    font-weight: 500;
+    border-top: 1px solid #a4a4a4;
+    padding: 10px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.61);
+  }
+}
+
+.footer-box {
+  color: #fff;
+  margin-right: 216px;
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+}
+
+.contact-details {
+  font-weight: 600;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__list {
+    font-weight: 500;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    padding-left: 23px;
+    position: relative;
+    &::before {
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+    &--email {
+      &::before {
+        background-image: url("../images/svg-images/email.svg");
+      }
+    }
+    &--tel {
+      &::before {
+        background-image: url("../images/svg-images/tel.svg");
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-self: flex-start;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 23px;
+    height: 23px;
+    &::after {
+      content: "";
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      top: 0;
+      left: 0;
+    }
+    &--linkedin {
+      &::after {
+        background-image: url("../images/decorative-img/linkedin.png");
+      }
+    }
+    &--instagram {
+      &::after {
+        background-image: url("../images/decorative-img/instagram.png");
+      }
+    }
+    &--facebook {
+      &::after {
+        background-image: url("../images/decorative-img/facebook.png");
+      }
+    }
   }
 }
