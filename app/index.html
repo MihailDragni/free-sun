@@ -15,7 +15,7 @@
     <div class="content">
       <h1 class="sr-only">Солнечные панели на любой вкус</h1>
 
-      <header class="header" style="background-image: url('images/background/solar-panels.png')">
+      <header class="header">
         <div class="container">
           <nav class="header__nav">
             <a class="header__logo logo" href="#">
@@ -46,21 +46,123 @@
                 <a class="change-language__link" href="#"> Ro </a>
               </li>
             </ul>
-            <div class="header__burger">
-              <button class="burger__name" type="button">Меню</button>
+            <div class="header__buttons">
+              <button class="menu-btn" type="button">Меню</button>
               <button class="burger" type="button">
                 <span class="sr-only">Открыть меню</span>
                 <span class="burger__line"></span>
               </button>
             </div>
           </nav>
-          <div class="header__body"></div>
         </div>
       </header>
-      <div class="burger__menu"></div>
-    </div>
+      <div class="burger-menu">
+        <div class="burger-menu__wrapper">
+          <button class="burger-menu__btn" type="button"></button>
+          <ul class="burger-menu__nav">
+            <li class="burger-menu__item">
+              <a class="burger-menu__link burger-menu__link--active" href="#">
+                Главная
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Экономичность
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Дизайн
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Резервная батарея
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Характеристики
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Контакты
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Наши проекты
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Найдите нас
+              </a>
+            </li>
+            <li class="burger-menu__item">
+              <a class="burger-menu__link" href="#">
+                Поддержка
+              </a>
+            </li>
+          </ul>
+          <a class="burger-menu__language" href="#">
+            Ru
+          </a>
+        </div>
+      </div>
 
-    <footer class="footer"></footer>
+      <main>
+        <section class="hero" style="background-image: url('../images/background/solar-panels.png')">
+          <div class="container">
+            <h2 class="hero__title">
+              Солнечные панели на любой вкус
+              <span>
+                Самые дешевые солнечные панели во всей Молдове
+              </span>
+            </h2>
+            <div class="hero__row">
+              <ul class="hero__benefits benefits">
+                <li class="benefits__item">
+                  <span class="benefits__title">
+                    $
+                  </span>
+                  <span class="benefits__text">
+                    Гарантированная низкая цена
+                  </span>
+                </li>
+
+                <li class="benefits__item">
+                  <span class="benefits__title">
+                    25
+                  </span>
+                  <span class="benefits__text">
+                    Лет гарантии на каждую панель
+                  </span>
+                </li>
+
+                <li class="benefits__item">
+                  <span class="benefits__title">
+                    24/7
+                  </span>
+                  <span class="benefits__text">
+                    Мониторинг потребляемой энергии
+                  </span>
+                </li>
+              </ul>
+              <a class="hero__link order-btn" href="#">
+                Заказать сейчас
+              </a>
+            </div>
+            <a class="hero__arrow-down" href="#"></a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+      </footer>
+
+    </div>
   </div>
 
   <script src="js/main.min.js"></script>

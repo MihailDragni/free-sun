@@ -6,26 +6,77 @@
 @import "animate";
 @import "global";
 
-.header {
+.hero {
   height: 100vh;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  &__nav {
-    padding-top: 25px;
+  position: relative;
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+    & span {
+      padding-top: 10px;
+      display: block;
+      font-weight: 400;
+      font-size: 23px;
+    }
+  }
+
+  &__row {
     display: flex;
-    justify-content: space-between;
+    position: absolute;
+    bottom: 15%;
+    left: 55%;
+    transform: translate(-55%);
+  }
+
+  &__arrow-down {
+    display: inline-flex;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    &::after {
+      content: '';;
+      mask-image: url('../images/svg-images/arrow-down.svg');
+      background-color: #fff;
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      mask-size: cover;
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+}
+
+.benefits {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin-right: 80px;
+  &__item {
+    max-width: 113px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    color: #fff;
     font-weight: 600;
-    font-size: 19px;
+    font-size: 36px;
+    &:last-child {
+      align-items: flex-start;
+    }
   }
 
-  &__logo {
-    padding-left: 10px;
-    margin-right: 205px;
-  }
-
-  &__menu {
-    margin-right: auto;
+  &__text {
+    padding-top: 5px;
+    font-size: 12px;
   }
 }
