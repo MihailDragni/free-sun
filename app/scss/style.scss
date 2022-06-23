@@ -55,6 +55,12 @@
       mask-repeat: no-repeat;
     }
   }
+
+  &__link {
+    padding: 22px 45px;
+    border: none;
+    font-size: 22px;
+  }
 }
 
 .benefits {
@@ -80,6 +86,146 @@
     font-size: 12px;
   }
 }
+
+.economy {
+  &__container {
+    padding-right: 0;
+  }
+  &__link {
+    padding: 15px 80px;
+    align-self: center;
+  }
+}
+
+.design {
+  &__container {
+    padding-right: 0;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__button {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    &::before {
+      content: "";
+      border: 2px solid #000;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      margin-right: 5px;
+      z-index: -1;
+      transition: all 0.2s;
+    }
+    &::after {
+      content: "";
+      mask-image: url("../images/svg-images/plus.svg");
+      background-color: #000;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      z-index: 20;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      &::before {
+        background-color: #000;
+      }
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__link {
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: 500;
+    & span {
+      padding-right: 20px;
+      &::after {
+        width: 19px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+.smart-wall {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bg {
+    height: 70vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__body{
+    padding: 20px 0 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inner {
+    padding-top: 25px;
+    margin-right: 42px;
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 42px;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__item  {
+    margin-right: 20px;
+    & a {
+      padding: 15px 50px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      & a {
+        padding: 15px 30px;
+      }
+    }
+  }
+  &__text {
+    font-weight: 500;
+    flex: 0 1 798px;
+  }
+
+  
+
+}
+
+
 
 .footer {
   background-color: #151515;
