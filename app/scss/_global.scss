@@ -40,9 +40,10 @@ body {
 }
 
 .container {
-  // max-width: 1760px;
-  // margin: 0 auto;
-  padding: 0 95px;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 0 15px;
+  // padding: 0 95px;
 }
 //адаптивный контейнер
 // @media (max-width: 1200px) {
