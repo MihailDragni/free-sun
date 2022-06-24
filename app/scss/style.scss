@@ -60,6 +60,7 @@
     padding: 22px 45px;
     border: none;
     font-size: 22px;
+    border-radius: 46px;
   }
 }
 
@@ -284,13 +285,61 @@
   }
 }
 
+.last-sentence {
+  padding: 300px 0 200px;
+  background-color: #151515;
+  &__inner {
+    text-align: center;
+    color: #fff;
+  }
 
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
 
+  &__text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
 
+  &__item {
+    &:first-child {
+      & a {
+        padding: 17px 117px;
+        margin-bottom: 25px;
+      }
+    }
+    &:last-child {
+      & a {
+        padding: 17px 101px;
+      }
+    }
+  }
 
-
-
-
+  &__link {
+    color: #fff;
+    border: 3px solid #fff;
+    background-color: #151515;
+    & span {
+      &::after {
+        background-color: #fff;
+      }
+    }
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      border: 3px solid #313131;
+      & span {
+        &::after {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
 
 
 

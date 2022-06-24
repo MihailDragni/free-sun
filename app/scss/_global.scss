@@ -40,10 +40,10 @@ body {
 }
 
 .container {
-  max-width: 1760px;
-  margin: 0 auto;
-  padding: 0 15px;
-  // padding: 0 95px;
+  // max-width: 1760px;
+  // margin: 0 auto;
+  // padding: 0 15px;
+  padding: 0 95px;
 }
 //адаптивный контейнер
 // @media (max-width: 1200px) {
@@ -68,7 +68,11 @@ body {
   right: 0;
   top: 0;
   z-index: 20;
-
+  // padding-top: 25px;
+  // &--active {
+  //   background-color: #fff;
+  //   padding: 5px 0;
+  // }
   &__nav {
     padding-top: 25px;
     display: flex;
@@ -89,6 +93,40 @@ body {
   &__buttons {
     display: flex;
     align-items: center;
+  }
+}
+.chat {
+  &__button {
+    position: fixed;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 66px;
+    height: 66px;
+    z-index: 50;
+    right: 5%;
+    bottom: 5%;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      mask-image: url("../images/svg-images/chat.svg");
+      background-color: #000;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
+    }
+    &:hover {
+      background-color: #000;
+      &::after {
+        background-color: #fff;
+      }
+    }
   }
 }
 
@@ -139,7 +177,7 @@ body {
   font-size: 18px;
   border: 3px solid #313131;
   color: #313131;
-  border-radius: 46px;
+  border-radius: 35.5px;
   background-color: #f2f2f2;
   align-self: baseline;
   white-space: nowrap;
@@ -149,7 +187,7 @@ body {
   & span {
     position: relative;
     padding-right: 25px;
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       mask-image: url("../images/svg-images/arrow-right.svg");
@@ -272,6 +310,7 @@ body {
 //       z-index: 10;
 //     }
 //   }
+
 .double-section-main {
   &__wrapper {
     display: flex;
