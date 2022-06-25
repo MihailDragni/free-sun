@@ -34,6 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
       bodyLock.classList.remove("lock");
     }
   });
+
+  const mainPageSlider = new Swiper(".main-page__slider", {
+    direction: "vertical",
+    sliderPerView: 1,
+    spaceBetween: 0,
+    mousewheel: true,
+    allowTouchMove: false,
+    // autoHeight: true,
+    lazy: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}"></span>`;
+      },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 });
 
 // document.addEventListener("click", function (e) {
