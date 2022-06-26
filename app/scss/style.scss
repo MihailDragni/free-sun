@@ -61,6 +61,7 @@
     border: none;
     font-size: 22px;
     border-radius: 46px;
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.47);
   }
 }
 
@@ -89,9 +90,6 @@
 }
 
 .economy {
-  &__container {
-    padding-right: 0;
-  }
   &__link {
     padding: 15px 80px;
     align-self: center;
@@ -99,10 +97,6 @@
 }
 
 .design {
-  &__container {
-    padding-right: 0;
-  }
-
   &__row {
     display: flex;
   }
@@ -169,6 +163,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
 
   &__bg {
@@ -177,12 +172,14 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    flex: 1 0 auto;
   }
 
   &__body {
     padding: 20px 0 60px;
     display: flex;
     justify-content: center;
+    flex: 0 0 auto;
   }
 
   &__inner {
@@ -225,8 +222,13 @@
 
 .solar-panel-specifications {
   background-color: #151515;
-  &__inner {
-    padding: 165px 0 173px;
+  &__wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__body {
     display: flex;
     justify-content: center;
     column-gap: 140px;
@@ -288,15 +290,19 @@
 .last-sentence {
   background-color: #151515;
   &__wrapper {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+  }
+  &__inner {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
   }
   &__body {
     text-align: center;
     color: #fff;
-    padding: 300px 0 200px;
-    flex: 1 1 auto;
   }
 
   &__title {
@@ -345,128 +351,8 @@
       }
     }
   }
-}
 
-
-
-.footer {
-  background-color: #151515;
-  &__top {
-    border-top: 1px solid #a4a4a4;
-    padding: 50px 0 50px;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__copyright {
-    font-weight: 500;
-    border-top: 1px solid #a4a4a4;
-    padding: 10px 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.61);
-  }
-}
-
-.footer-box {
-  color: #fff;
-  margin-right: 216px;
-  &__name {
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 7px;
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 7px;
-    }
-  }
-}
-
-.contact-details {
-  font-weight: 600;
-  color: #fff;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__list {
-    font-weight: 500;
-  }
-
-  &__name {
-    margin-bottom: 10px;
-  }
-
-  &__item {
-    margin-bottom: 10px;
-    padding-left: 23px;
-    position: relative;
-    &::before {
-      content: "";
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      position: absolute;
-    }
-    &--email {
-      &::before {
-        background-image: url("../images/svg-images/email.svg");
-      }
-    }
-    &--tel {
-      &::before {
-        background-image: url("../images/svg-images/tel.svg");
-      }
-    }
-  }
-}
-
-.socials {
-  display: flex;
-  align-self: flex-start;
-  &__item {
-    &:not(:last-child) {
-      margin-right: 13px;
-    }
-  }
-
-  &__link {
-    display: block;
-    position: relative;
-    width: 23px;
-    height: 23px;
-    &::after {
-      content: "";
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      width: 23px;
-      height: 23px;
-      top: 0;
-      left: 0;
-    }
-    &--linkedin {
-      &::after {
-        background-image: url("../images/decorative-img/linkedin.png");
-      }
-    }
-    &--instagram {
-      &::after {
-        background-image: url("../images/decorative-img/instagram.png");
-      }
-    }
-    &--facebook {
-      &::after {
-        background-image: url("../images/decorative-img/facebook.png");
-      }
-    }
+  &__footer {
+    flex: 0 0 auto;
   }
 }

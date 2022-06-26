@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //     bodyLock.classList.remove("lock");
 //   }
 // });
+
 // $(function () {
 //   let headerTop = $(".header");
 //   $(window).scroll(function () {
