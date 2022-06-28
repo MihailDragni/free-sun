@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 0,
     mousewheel: true,
     allowTouchMove: false,
-    // autoHeight: true,
+    autoHeight: true,
     lazy: true,
     pagination: {
       el: ".swiper-pagination",
@@ -56,6 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+// $(document).ready(function () {
+//   $(".fullpage").fullpage({
+//     //options here
+//     // autoScrolling: true,
+//     scrollHorizontally: true,
+//   });
+// });
 
 // document.addEventListener("click", function (e) {
 //   // const burgerMenuWrapper = document.querySelector('.burger-menu__wrapper')

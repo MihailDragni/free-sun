@@ -13,26 +13,52 @@
   background-repeat: no-repeat;
   position: relative;
   &__title {
-    font-weight: 700;
     font-size: 36px;
+    max-width: 500px;
+    padding: 15px;
+    width: 100%;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%);
+    @include line-clamp(4);
     & span {
       padding-top: 10px;
       display: block;
       font-weight: 400;
       font-size: 23px;
+      @include line-clamp(2);
+      @include md($tablet-2) {
+        font-size: 18px;
+        max-width: 500px;
+        width: 100%;
+      }
+      @include md($tablet) {
+        font-size: 14px;
+      }
+    }
+    @include md($hd) {
+      text-align: center;
+    }
+
+    @include md($tablet) {
+      font-size: 24px;
     }
   }
 
   &__row {
     display: flex;
+    max-width: 800px;
+    justify-content: space-between;
+    width: 100%;
     position: absolute;
     bottom: 15%;
     left: 55%;
     transform: translate(-55%);
+    padding: 0 15px;
+    @include md($tablet-2) {
+      flex-direction: column;
+    }
   }
 
   &__arrow-down {
@@ -53,23 +79,47 @@
       mask-size: cover;
       mask-position: center;
       mask-repeat: no-repeat;
+      @include md($tablet) {
+        width: 35px;
+        height: 35px;
+      }
     }
+    @include md($tablet) {
+        width: 35px;
+        height: 35px;
+      }
   }
 
   &__link {
-    padding: 22px 45px;
+    padding: 24px 42px;
     border: none;
-    font-size: 22px;
+    align-self: center;
     border-radius: 46px;
     box-shadow: 0 3px 11px rgba(0, 0, 0, 0.47);
+    @include md($tablet-2) {
+      padding: 15px 32px;
+    }
+    @include md($phone) {
+      padding: 10px 15px;
+    }
   }
 }
 
 .benefits {
   display: flex;
-  width: 600px;
   justify-content: space-between;
-  margin-right: 80px;
+  column-gap: 80px;
+  @include md($hd) {
+    margin-right: 0;
+    justify-content: center;
+    column-gap: 50px;
+  }
+
+  @include md($tablet-2) {
+    padding-bottom: 20px;
+    column-gap: 25px;
+  }
+
   &__item {
     max-width: 113px;
     display: flex;
@@ -78,14 +128,19 @@
     color: #fff;
     font-weight: 600;
     font-size: 36px;
-    &:last-child {
-      align-items: flex-start;
+    @include md($tablet-2) {
+      font-size: 26px;
     }
   }
 
   &__text {
+    text-align: center;
     padding-top: 5px;
     font-size: 12px;
+    @include line-clamp(2);
+    @include md($tablet) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -295,7 +350,7 @@
     flex-direction: column;
   }
   &__inner {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 0 auto;

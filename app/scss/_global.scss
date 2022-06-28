@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 body {
@@ -40,10 +40,7 @@ body {
   overflow: hidden;
 }
 
-.container {
-  // max-width: 1760px;
-  // margin: 0 auto;
-  // padding: 0 15px;
+.fullwidth-container {
   padding: 0 95px;
   @include md($hd) {
     padding: 0 55px;
@@ -55,22 +52,28 @@ body {
     padding: 0 15px;
   }
 }
-//адаптивный контейнер
-// @media (max-width: 1200px) {
-//   .container {
-//     max-width: 970px;
-//   }
-// }
-// @media (max-width: 992px) {
-//   .container {
-//     max-width: 750px;
-//   }
-// }
-// @media (max-width: 768px) {
-//   .container {
-//     max-width: none;
-//   }
-// }
+
+.fixed-container {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 0 15px;
+  //адаптивный контейнер
+  // @media (max-width: 1200px) {
+  //   .container {
+  //     max-width: 970px;
+  //   }
+  // }
+  // @media (max-width: 992px) {
+  //   .container {
+  //     max-width: 750px;
+  //   }
+  // }
+  // @media (max-width: 768px) {
+  //   .container {
+  //     max-width: none;
+  //   }
+  // }
+}
 
 .header {
   position: fixed;
@@ -93,6 +96,9 @@ body {
     font-size: 19px;
     @include md($hd) {
       font-size: 17px;
+    }
+    @include md($phone) {
+      padding-top: 10px;
     }
   }
 
@@ -146,8 +152,34 @@ body {
     }
   }
 }
-.h1-title {
+.h1 {
+  font-size: 45px;
+  font-weight: 700;
+  @include md($hd) {
+    font-size: 36px;
+  }
+  @include md($desktop) {
+    font-size: 32px;
+  }
+
+  @include md($tablet-2) {
+    font-size: 26px;
+  }
+
+  @include md($tablet) {
+    font-size: 22px;
+  }
+
+  @include md($phone) {
+    font-size: 18px;
+  }
+}
+.h2 {
   font-size: 32px;
+  font-weight: 600;
+}
+.h3 {
+  font-size: 26px;
   font-weight: 600;
 }
 
@@ -182,6 +214,10 @@ body {
       width: 96px;
       height: 50px;
     }
+    @include md($phone) {
+      width: 66px;
+      height: 40px;
+    }
   }
 }
 
@@ -196,6 +232,9 @@ body {
 .change-language {
   display: flex;
   margin-right: 35px;
+  @include md($tablet-2) {
+    display: none;
+  }
   &__item {
     &:first-child {
       padding-right: 15px;
@@ -210,7 +249,7 @@ body {
 }
 
 .menu-btn {
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 .burger {
@@ -229,9 +268,26 @@ body {
   align-self: baseline;
   white-space: nowrap;
   transition: all 0.2s;
+  @include line-clamp(1);
+  @include md($hd) {
+    font-size: 16px;
+  }
+  @include md($tablet-2) {
+    padding: 15px 32px;
+    font-size: 14px;
+  }
+  @include md($phone) {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+
   & span {
     position: relative;
     padding-right: 25px;
+    @include md($tablet-2) {
+      padding-right: 16px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -246,6 +302,14 @@ body {
       right: 0;
       transform: translateY(-50%);
       transition: all 0.2s;
+      @include md($desktop) {
+        width: 20px;
+        height: 20px;
+      }
+      @include md($tablet-2) {
+        width: 14px;
+        height: 14px;
+      }
     }
   }
 
@@ -281,12 +345,18 @@ body {
     position: relative;
     @include md($hd) {
       padding: 65px 40px 0 38px;
+      width: 25vw;
     }
     @include md($desktop) {
       padding: 65px 25px 0 25px;
     }
     @include md($tablet-2) {
-      width: 30vw;
+      width: 40vw;
+    }
+
+    @include md($phone) {
+      width: 50vw;
+      padding: 65px 15px 0 15px;
     }
   }
 
@@ -329,6 +399,9 @@ body {
     @include md($hd) {
       margin-bottom: 15px;
     }
+    @include md($phone) {
+      margin-bottom: 10px;
+    }
   }
 
   &__link {
@@ -337,10 +410,17 @@ body {
     @include md($desktop) {
       font-size: 14px;
     }
+    @include md($phone) {
+      padding: 4px 10px;
+    }
+
     &--active {
       padding: 4px 23px;
       border-radius: 17.5px;
       background: rgba(196, 196, 196, 0.25);
+      @include md($phone) {
+        padding: 4px 10px;
+      }
     }
   }
 
@@ -427,49 +507,6 @@ body {
   position: absolute;
 }
 
-.swiper {
-  height: 100vh;
-  width: 100%;
-}
-
-.swiper-pagination-bullets {
-  display: inline-flex;
-  width: 4px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
-  width: 20px;
-  position: relative;
-  height: 34px;
-  background-color: transparent;
-  &::after {
-    content: "";
-    width: 2px;
-    border-radius: 5px;
-    height: 34px;
-    background-color: #9f9f9f;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-.swiper-pagination-bullet-active {
-  &::after {
-    width: 4px;
-    background-color: #090909;
-  }
-}
-
-.swiper-vertical > .swiper-pagination-bullets,
-.swiper-pagination-vertical.swiper-pagination-bullets {
-  left: 25px;
-}
-
 .footer {
   background-color: rgba(242, 242, 242, 0.57);
   &--black {
@@ -481,6 +518,17 @@ body {
     padding: 50px 0 50px;
     display: flex;
     justify-content: center;
+    @include md($desktop) {
+      padding: 40px 0 40px;
+    }
+    @include md($tablet-2) {
+      padding: 25px 0 25px;
+    }
+
+    @include md($tablet) {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
   }
 
   &__copyright {
@@ -496,6 +544,19 @@ body {
 
 .footer-box {
   margin-right: 216px;
+  @include md($hd) {
+    margin-right: 150px;
+  }
+  @include md($desktop) {
+    margin-right: 100px;
+  }
+  @include md($tablet-2) {
+    margin-right: 30px;
+  }
+  @include md($tablet) {
+    margin-bottom: 20px;
+  }
+
   &__name {
     font-weight: 600;
     font-size: 18px;
@@ -515,6 +576,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include md($tablet-2) {
+    align-items: flex-start;
+  }
   &--black {
     &__item {
       &::before {
@@ -600,3 +664,50 @@ body {
     }
   }
 }
+
+// .swiper {
+//   height: 100vh;
+//   width: 100%;
+// }
+
+// .swiper-wrapper {
+//   align-items: flex-start;
+// }
+
+// .swiper-pagination-bullets {
+//   display: inline-flex;
+//   width: 4px;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .swiper-pagination-bullet,
+// .swiper-pagination-bullet-active {
+//   width: 20px;
+//   position: relative;
+//   height: 34px;
+//   background-color: transparent;
+//   &::after {
+//     content: "";
+//     width: 2px;
+//     border-radius: 5px;
+//     height: 34px;
+//     background-color: #9f9f9f;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//   }
+// }
+
+// .swiper-pagination-bullet-active {
+//   &::after {
+//     width: 4px;
+//     background-color: #090909;
+//   }
+// }
+
+// .swiper-vertical > .swiper-pagination-bullets,
+// .swiper-pagination-vertical.swiper-pagination-bullets {
+//   left: 25px;
+// }
