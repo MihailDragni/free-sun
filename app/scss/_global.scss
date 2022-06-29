@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  overflow: visible;
+  width: 100%;
 }
 
 body {
@@ -81,14 +81,19 @@ body {
   right: 0;
   top: 0;
   z-index: 20;
+  transition: all 0.1s ease 0.1s;
   // padding-top: 25px;
   // &--active {
   //   background-color: #fff;
   //   padding: 5px 0;
   // }
 
+  &--active {
+    background-color: #fff;
+  }
+
   &__nav {
-    padding-top: 25px;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -96,9 +101,14 @@ body {
     font-size: 19px;
     @include md($hd) {
       font-size: 17px;
+      padding: 15px;
+    }
+    @include land($height) {
+      padding: 10px;
     }
     @include md($phone) {
       padding-top: 10px;
+      padding: 5px;
     }
   }
 
@@ -155,6 +165,7 @@ body {
 .h1 {
   font-size: 45px;
   font-weight: 700;
+  @include line-clamp(2);
   @include md($hd) {
     font-size: 36px;
   }
@@ -177,10 +188,37 @@ body {
 .h2 {
   font-size: 32px;
   font-weight: 600;
+  @include line-clamp(2);
+  @include md($desktop) {
+    font-size: 26px;
+  }
+  @include md($tablet-2) {
+    font-size: 22px;
+  }
+
+  @include land($height) {
+    font-size: 18px;
+  }
+
+  @include md($phone) {
+    font-size: 18px;
+  }
 }
 .h3 {
   font-size: 26px;
   font-weight: 600;
+  @include md($desktop) {
+    font-size: 22px;
+  }
+  @include md($tablet-2) {
+    font-size: 18px;
+  }
+  @include land($height) {
+    font-size: 16px;
+  }
+  @include md($phone) {
+    font-size: 16px;
+  }
 }
 
 .menu {
@@ -214,7 +252,13 @@ body {
       width: 96px;
       height: 50px;
     }
+
     @include md($phone) {
+      width: 66px;
+      height: 40px;
+    }
+
+    @include land($height) {
       width: 66px;
       height: 40px;
     }
@@ -243,6 +287,8 @@ body {
         content: "/";
         position: absolute;
         right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }
@@ -267,6 +313,7 @@ body {
   background-color: #f2f2f2;
   align-self: baseline;
   white-space: nowrap;
+  padding: 15px 50px;
   transition: all 0.2s;
   @include line-clamp(1);
   @include md($hd) {
@@ -277,10 +324,13 @@ body {
     font-size: 14px;
   }
   @include md($phone) {
-    padding: 10px 15px;
+    padding: 10px 32px;
     font-size: 12px;
   }
-
+  @include land($height) {
+    padding: 10px 32px;
+    font-size: 12px;
+  }
 
   & span {
     position: relative;
@@ -358,6 +408,10 @@ body {
       width: 50vw;
       padding: 65px 15px 0 15px;
     }
+
+    @include land($height) {
+      padding: 45px 15px 0 15px;
+    }
   }
 
   &__btn {
@@ -400,7 +454,10 @@ body {
       margin-bottom: 15px;
     }
     @include md($phone) {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    @include land($height) {
+      margin-bottom: 2px;
     }
   }
 
@@ -442,47 +499,81 @@ body {
 }
 
 .lock {
+  // overflow: hidden;
   position: relative;
   transition: all 0.1s;
   &::after {
     content: "";
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    z-index: 30;
   }
 }
 
 .double-section-main {
   &__container {
     padding-right: 0;
+    @include md($tablet-2) {
+      padding: 0;
+    }
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
+    @include md($tablet-2) {
+      flex-direction: column;
+      font-size: 14px;
+    }
   }
 
   &__body {
-    max-width: 450px;
-    width: 100%;
-    padding: 115px 45px 50px 0;
+    flex: 0 1 25%;
+    padding: 115px 25px 60px 0;
     display: flex;
     flex-direction: column;
+    @include md($hd) {
+      padding-right: 20px;
+    }
+    @include md($desktop) {
+      padding: 15% 25px 60px 0;
+    }
+    @include md($tablet-2) {
+      order: 1;
+      justify-content: start;
+      padding: 15px;
+    }
   }
 
   &__inner {
     flex: 1 0 auto;
+    @include md($tablet-2) {
+      margin-bottom: 25px;
+    }
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
+    @include land($height) {
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
-    font-size: 30px;
-    font-weight: 600;
     margin-bottom: 25px;
+    @include md($phone) {
+      margin-bottom: 10px;
+    }
+    @include land($height) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    @include line-clamp(10);
   }
 
   &__text-link {
@@ -491,11 +582,23 @@ body {
   }
 
   &__bg {
+    flex: 1 1 75%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    @include md($hd) {
+      background-position: right center;
+    }
+    @include md($tablet-2) {
+      flex: 1 1 auto;
+      height: 65vh;
+      order: 0;
+    }
+
+    @include md($phone) {
+    }
   }
 }
 
@@ -539,6 +642,12 @@ body {
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.61);
+    @include md($tablet-2) {
+      font-size: 14px;
+    }
+    @include md($phone) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -561,9 +670,21 @@ body {
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 7px;
+    @include md($tablet-2) {
+      font-size: 16px;
+    }
+    @include md($phone) {
+      font-size: 14px;
+    }
   }
 
   &__item {
+    @include md($tablet-2) {
+      font-size: 14px;
+    }
+    @include md($phone) {
+      font-size: 12px;
+    }
     &:not(:last-child) {
       margin-bottom: 7px;
     }
@@ -578,6 +699,10 @@ body {
   align-items: center;
   @include md($tablet-2) {
     align-items: flex-start;
+    font-size: 16px;
+  }
+  @include md($phone) {
+    font-size: 14px;
   }
   &--black {
     &__item {

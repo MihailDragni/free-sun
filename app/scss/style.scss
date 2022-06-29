@@ -3,7 +3,6 @@
 @import "vars";
 @import "mixins";
 @import "libs";
-@import "animate";
 @import "global";
 
 .hero {
@@ -14,24 +13,31 @@
   position: relative;
   &__title {
     font-size: 36px;
-    max-width: 500px;
     padding: 15px;
-    width: 100%;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%);
     @include line-clamp(4);
+    @include land($height) {
+      font-size: 26px;
+      top: 20%;
+    }
+    @include md($tablet-2) {
+      max-width: 500px;
+      width: 100%;
+    }
     & span {
       padding-top: 10px;
       display: block;
       font-weight: 400;
       font-size: 23px;
       @include line-clamp(2);
+      @include land($height) {
+        padding-top: 5px;
+      }
       @include md($tablet-2) {
         font-size: 18px;
-        max-width: 500px;
-        width: 100%;
       }
       @include md($tablet) {
         font-size: 14px;
@@ -56,6 +62,9 @@
     left: 55%;
     transform: translate(-55%);
     padding: 0 15px;
+    @include land($height) {
+      bottom: 10%;
+    }
     @include md($tablet-2) {
       flex-direction: column;
     }
@@ -85,9 +94,9 @@
       }
     }
     @include md($tablet) {
-        width: 35px;
-        height: 35px;
-      }
+      width: 35px;
+      height: 35px;
+    }
   }
 
   &__link {
@@ -109,6 +118,7 @@
   display: flex;
   justify-content: space-between;
   column-gap: 80px;
+  margin-right: 70px;
   @include md($hd) {
     margin-right: 0;
     justify-content: center;
@@ -118,6 +128,9 @@
   @include md($tablet-2) {
     padding-bottom: 20px;
     column-gap: 25px;
+  }
+  @include land($height) {
+    padding-bottom: 10px;
   }
 
   &__item {
@@ -148,12 +161,25 @@
   &__link {
     padding: 15px 80px;
     align-self: center;
+    @include md($desktop) {
+      padding: 15px 32px;
+    }
+    @include md($phone) {
+      padding: 10px 32px;
+    }
+
+    @include land($height) {
+      padding: 10 32px;
+    }
   }
 }
 
 .design {
   &__row {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__button {
@@ -161,49 +187,51 @@
     font-weight: 500;
     display: flex;
     align-items: center;
-    position: relative;
-    margin-right: 10px;
-    &::before {
-      content: "";
+    flex: 0 0 auto;
+    padding: 15px 10px;
+    @include md($tablet-2) {
+      font-size: 14px;
+    }
+    & span {
       border: 2px solid #000;
+      position: relative;
       border-radius: 50%;
       width: 45px;
       height: 45px;
       margin-right: 5px;
       z-index: -1;
       transition: all 0.2s;
-    }
-    &::after {
-      content: "";
-      mask-image: url("../images/svg-images/plus.svg");
-      background-color: #000;
-      mask-repeat: no-repeat;
-      mask-size: cover;
-      mask-position: center;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      z-index: 20;
-      transition: all 0.2s;
+      &::after {
+        content: "";
+        mask-image: url("../images/svg-images/plus.svg");
+        background-color: #000;
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        transition: all 0.2s;
+      }
     }
 
     &:hover {
-      &::before {
+      & span {
         background-color: #000;
-      }
-      &::after {
-        background-color: #fff;
+        &::after {
+          background-color: #fff;
+        }
       }
     }
   }
 
   &__link {
-    padding: 15px 50px;
-    font-size: 16px;
     font-weight: 500;
+    align-self: center;
     & span {
       padding-right: 20px;
       &::after {
@@ -218,28 +246,46 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: start;
   }
 
   &__bg {
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     flex: 1 0 auto;
+    @include md($hd) {
+      height: 65vh;
+      flex: 0 1 auto;
+    }
   }
 
   &__body {
-    padding: 20px 0 60px;
+    padding: 20px 15px 60px;
     display: flex;
     justify-content: center;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    @include md($desktop) {
+      padding: 20px 15px;
+    }
+
+    @include md($tablet-2) {
+      font-size: 14px;
+    }
+
+    @include md($tablet) {
+      flex-direction: column;
+    }
   }
 
   &__inner {
-    padding-top: 25px;
+    flex: 0 1 auto;
     margin-right: 42px;
+    @include md($tablet-2) {
+      margin-right: 20px;
+    }
   }
 
   &__subtitle {
@@ -247,31 +293,42 @@
   }
 
   &__title {
-    font-size: 26px;
-    font-weight: 600;
     margin-bottom: 42px;
+    @include md($tablet-2) {
+      margin-bottom: 25px;
+    }
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__links {
     display: flex;
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
+    @include md($tel) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
-    margin-right: 20px;
-    & a {
-      padding: 15px 50px;
+    &:not(:last-child) {
+      margin-right: 20px;
     }
-
-    &:last-child {
-      margin-right: 0;
-      & a {
-        padding: 15px 30px;
-      }
+    @include md($tablet) {
+      margin-right: 10px;
+    }
+    @include md($tel) {
+      margin-bottom: 10px;
     }
   }
   &__text {
     font-weight: 500;
     flex: 0 1 798px;
+    @include md($tablet) {
+      flex: 0 1 auto;
+    }
   }
 }
 
@@ -282,11 +339,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include md($phone) {
+      height: 90vh;
+    }
   }
   &__body {
     display: flex;
     justify-content: center;
     column-gap: 140px;
+    padding: 0 15px;
+    @include md($hd) {
+      column-gap: 80px;
+    }
+    @include md($desktop) {
+      column-gap: 40px;
+      position: relative;
+    }
   }
 
   &__img {
@@ -296,6 +364,27 @@
     background-size: cover;
     width: 635px;
     height: 659px;
+    @include md($tablet-2) {
+      position: absolute;
+      opacity: 0.4;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include md($tablet) {
+      width: 535px;
+      height: 535px;
+    }
+
+    @include land($height) {
+      width: 315px;
+      height: 315px;
+    }
+
+    @include md($phone) {
+      width: 315px;
+      height: 315px;
+    }
   }
 }
 
@@ -304,10 +393,17 @@
   max-width: 530px;
   width: 100%;
   &__title {
-    font-weight: 700;
-    font-size: 26px;
     color: #fff;
     margin-bottom: 60px;
+    @include md($tablet-2) {
+      text-align: center;
+    }
+    @include land($height) {
+      margin-bottom: 30px;
+    }
+    @include md($phone) {
+      margin-bottom: 30px;
+    }
   }
   &__list {
     display: flex;
@@ -317,7 +413,17 @@
     // display: grid;
     // grid-template-columns: repeat(2, 1fr);
     // grid-column-gap: 72px;
+    @include md($tablet) {
+      column-gap: 0px;
+      height: 430px;
+      align-items: center;
+    }
+    @include land($height) {
+      height: 230px;
+      column-gap: 0;
+    }
   }
+
   &__item {
     padding-top: 16px;
     position: relative;
@@ -335,6 +441,22 @@
       top: 0;
       left: 0;
     }
+    @include md($tablet) {
+      font-size: 14px;
+      margin-bottom: 15px;
+      max-width: 150px;
+      width: 100%;
+    }
+    @include land($height) {
+      font-size: 14px;
+      margin-bottom: 15px;
+      max-width: 150px;
+      width: 100%;
+    }
+
+    @include md($tel) {
+      font-size: 12px;
+    }
   }
 
   &__desc {
@@ -345,7 +467,7 @@
 .last-sentence {
   background-color: #151515;
   &__wrapper {
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
   }
@@ -361,8 +483,6 @@
   }
 
   &__title {
-    font-weight: 700;
-    font-size: 30px;
     margin-bottom: 5px;
   }
 
@@ -370,6 +490,13 @@
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 30px;
+    @include md($tablet-2) {
+      font-size: 16px;
+    }
+  }
+
+  &__links {
+    padding-bottom: 20px;
   }
 
   &__item {
@@ -377,11 +504,32 @@
       & a {
         padding: 17px 117px;
         margin-bottom: 25px;
+        @include md($tablet) {
+          padding: 15px 100px;
+        }
+
+        @include md($phone) {
+          padding: 15px 80px;
+          margin-bottom: 15px;
+        }
+        @include land($height) {
+          padding: 15px 80px;
+          margin-bottom: 15px;
+        }
       }
     }
     &:last-child {
       & a {
         padding: 17px 101px;
+        @include md($tablet) {
+          padding: 15px 84px;
+        }
+        @include md($phone) {
+          padding: 15px 67px;
+        }
+        @include land($height) {
+          padding: 15px 67px;
+        }
       }
     }
   }
