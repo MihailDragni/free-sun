@@ -35,6 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const aboutUsSlider = new Swiper(".our-projects-slider", {
+    sliderPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
   // const mainPageSlider = new Swiper(".main-page__slider", {
   //   direction: "vertical",
   //   sliderPerView: 1,
@@ -57,6 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 });
 
+$(function () {
+  let headerTop = $(".header");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+      headerTop.addClass("header--active");
+    } else {
+      headerTop.removeClass("header--active");
+    }
+  });
+});
+
 // $(document).ready(function () {
 //   $(".fullpage").fullpage({
 //     //options here
@@ -73,14 +93,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //     bodyLock.classList.remove("lock");
 //   }
 // });
-
-$(function () {
-  let headerTop = $(".header");
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      headerTop.addClass("header--active");
-    } else {
-      headerTop.removeClass("header--active");
-    }
-  });
-});

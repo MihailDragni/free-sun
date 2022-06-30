@@ -610,6 +610,31 @@ body {
   position: absolute;
 }
 
+.our-projects-slider {
+  width: 810px;
+  height: 500px;
+  margin: 0;
+  &__prev,
+  &__next {
+    width: 13px;
+    height: 26px;
+    color: rgba(255, 255, 255, 0.79);
+  }
+  &__img {
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .footer {
   background-color: rgba(242, 242, 242, 0.57);
   &--black {
