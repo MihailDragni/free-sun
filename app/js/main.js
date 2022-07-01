@@ -36,11 +36,48 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const aboutUsSlider = new Swiper(".our-projects-slider", {
-    sliderPerView: 1,
+    slidesPerView: 1,
     spaceBetween: 20,
+    grabCursor: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const aboutPanelsSlider = new Swiper(".about-panels-slider", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".about-panels__pogination",
+      clickable: true,
+    },
+  });
+
+  const seeMoreSlider = new Swiper(".see-more-projects__slider", {
+    spaceBetween: 15,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".see-more-projects__pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+
+      992: {
+        slidesPerView: 2,
+      },
     },
   });
 
@@ -69,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 $(function () {
   let headerTop = $(".header");
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
+    if ($(this).scrollTop() > 20) {
       headerTop.addClass("header--active");
     } else {
       headerTop.removeClass("header--active");
