@@ -112,7 +112,9 @@ $(function () {
       headerTop.removeClass("header--active");
     }
   });
+  $(".range-slider__input").ionRangeSlider();
 });
+
 
 // $(document).ready(function () {
 //   $(".fullpage").fullpage({

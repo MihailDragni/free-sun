@@ -40,6 +40,12 @@ body {
   overflow: hidden;
 }
 
+.calc-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.43);
+}
+
 .fullwidth-container {
   padding: 0 95px;
 
@@ -102,11 +108,6 @@ body {
   top: 0;
   z-index: 20;
   transition: all 0.1s ease 0.1s;
-  // padding-top: 25px;
-  // &--active {
-  //   background-color: #fff;
-  //   padding: 5px 0;
-  // }
 
   &--active {
     background-color: #fff;
@@ -821,12 +822,15 @@ body {
   &__img {
     object-fit: cover;
     object-position: center;
+
     @include md($hd) {
       height: 550px;
     }
+
     @include md($tablet-2) {
       height: 450px;
     }
+
     @include md($phone) {
       height: 350px;
     }
@@ -1072,6 +1076,12 @@ body {
   }
 }
 
+.range-slider {
+  padding: 25px 75px;
+  border: 1px solid rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   width: 13px;
@@ -1093,6 +1103,7 @@ body {
   width: 34px;
   background-color: transparent;
   opacity: 1;
+
   &::after {
     content: "";
     width: 34px;
@@ -1111,8 +1122,3 @@ body {
     background-color: #090909;
   }
 }
-
-// .swiper-vertical > .swiper-pagination-bullets,
-// .swiper-pagination-vertical.swiper-pagination-bullets {
-//   left: 25px;
-// }

@@ -36,6 +36,7 @@ function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
     // "node_modules/fullpage.js/dist/fullpage.js",
+    "node_modules/ion-rangeslider/js/ion.rangeSlider.js",
     "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
   ])
