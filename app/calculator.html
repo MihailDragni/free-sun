@@ -122,26 +122,22 @@
                 Калькулятор для солнечных панелей
               </h1>
               <div class="solar-panel-calc__wrapper">
-                <div class="range-slider">
-                  <label class="range-slider__label calc-label" for="slider">Ежемесячный счет за электроэнергию (MDL)</label>
+                <form class="range-slider" action="#">
+                  <label class="range-slider__label calc-label" for="range-slider">
+                    Ежемесячный счет за электроэнергию (MDL)
+                  </label>
                   <input
                     class="range-slider__input"
+                    id="range-slider"
                     type="text"
-                    id="slider"
                     name="range-slider"
                     value="540"
                     data-min="0"
-                    data-max="1000"
-                    data-from="200"
-                    data-to="500"
+                    data-max="1500"
+                    data-from="540"
                   />
-                  <input
-                    type="text"
-                    class="range-slider__value"
-                    name="slider-value"
-                    value="540"
-                  />
-                </div>
+                  <span class="range-slider__value"></span>
+                </form>
                 <div class="solar-panel-calc__body">
                   <p class="solar-panel-calc__text">
                     *Эти данные только примерны, для точных подчетов нужна

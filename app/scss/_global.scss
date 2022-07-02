@@ -44,6 +44,12 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.43);
+  display: inline-block;
+  background-color: #fff;
+  padding: 10px 15px;
+  position: absolute;
+  top: -22px;
+  left: 100px;
 }
 
 .fullwidth-container {
@@ -1077,9 +1083,20 @@ body {
 }
 
 .range-slider {
-  padding: 25px 75px;
+  padding: 32px 75px;
   border: 1px solid rgba(0, 0, 0, 0.17);
   border-radius: 5px;
+  position: relative;
+  &__label {
+    margin-bottom: 10px;
+  }
+  &__value {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .swiper-button-prev,
@@ -1121,4 +1138,42 @@ body {
     height: 7px;
     background-color: #090909;
   }
+}
+
+.irs--flat .irs-line {
+  top: 0;
+  height: 30px;
+  background-color: rgba(196, 196, 196, 0.45);
+  border-radius: 15px;
+}
+
+.irs--flat .irs-handle {
+  top: -10px;
+  width: 51px;
+  height: 51px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.irs--flat .irs-handle > i:first-child {
+  display: none;
+}
+
+.irs--flat .irs-bar {
+  top: 0;
+  height: 30px;
+  background-color: #034aa6;
+  border-radius: 15px;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+  display: none;
+}
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  display: none;
 }

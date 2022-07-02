@@ -112,7 +112,14 @@ $(function () {
       headerTop.removeClass("header--active");
     }
   });
-  $(".range-slider__input").ionRangeSlider();
+  $(".range-slider__input").ionRangeSlider({
+    onStart: function (data) {
+      $(".range-slider__value").text(data.from);
+    },
+    onChange:function (data) {
+      $(".range-slider__value").text(data.from);
+    }
+  });
 });
 
 
