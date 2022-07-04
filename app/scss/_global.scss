@@ -49,7 +49,18 @@ body {
   padding: 10px 15px;
   position: absolute;
   top: -22px;
-  left: 100px;
+  @include md($hd) {
+    font-size: 14px;
+  }
+  @include md($desktop) {
+    position: static;
+    text-align: center;
+    flex: 1 1 auto;
+  }
+  @include md($tablet-2) {
+    padding: 0;
+    padding-bottom: 10px;
+  }
 }
 
 .fullwidth-container {
@@ -853,6 +864,49 @@ body {
     }
   }
 }
+.range-slider {
+  padding: 32px 75px 25px;
+  border: 1px solid rgba(0, 0, 0, 0.17);
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 12px;
+  @include md($desktop) {
+    padding: 30px 35px 20px;
+  }
+  @include md($phone) {
+    padding: 20px;
+  }
+  @include land($height) {
+    padding: 20px;
+  }
+  &__value {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding-top: 28px;
+    @include md($tablet) {
+      padding-top: 15px;
+      font-size: 26px;
+    }
+    @include land($height) {
+      padding-top: 15px;
+      font-size: 26px;
+    }
+  }
+
+  &__label {
+    @include md($phone) {
+      padding-bottom: 25px;
+    }
+    @include land($height) {
+      padding-bottom: 25px;
+    }
+  }
+}
+
+
 
 .footer {
   background-color: rgba(242, 242, 242, 0.57);
@@ -1082,22 +1136,8 @@ body {
   }
 }
 
-.range-slider {
-  padding: 32px 75px;
-  border: 1px solid rgba(0, 0, 0, 0.17);
-  border-radius: 5px;
-  position: relative;
-  &__label {
-    margin-bottom: 10px;
-  }
-  &__value {
-    font-size: 36px;
-    font-weight: 600;
-    color: #000;
-    display: flex;
-    justify-content: center;
-  }
-}
+
+
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -1145,6 +1185,9 @@ body {
   height: 30px;
   background-color: rgba(196, 196, 196, 0.45);
   border-radius: 15px;
+  @include md($tablet) {
+    height: 25px;
+  }
 }
 
 .irs--flat .irs-handle {
@@ -1154,6 +1197,11 @@ body {
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  @include md($tablet) {
+    width: 40px;
+    height: 40px;
+    top: -9px;
+  }
 }
 
 .irs--flat .irs-handle > i:first-child {
@@ -1165,6 +1213,9 @@ body {
   height: 30px;
   background-color: #034aa6;
   border-radius: 15px;
+  @include md($tablet) {
+    height: 25px;
+  }
 }
 
 .irs-from,
