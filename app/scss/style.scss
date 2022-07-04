@@ -1192,9 +1192,22 @@
 
 .our-benefits {
   padding: 70px 0 60px;
+  @include md($tablet) {
+    padding: 50px 0;
+  }
   &__title {
     margin-bottom: 85px;
     text-align: center;
+    @include md($tablet) {
+      margin-bottom: 50px;
+    }
+
+    @include md($tel) {
+      margin-bottom: 30px;
+    }
+    @include land($height) {
+      margin-bottom: 30px;
+    }
   }
 
   &__wrapper {
@@ -1206,8 +1219,20 @@
     display: grid;
     grid-template-columns: repeat(3, 350px);
     grid-row-gap: 70px;
-    grid-column-gap: 220px;
+    grid-column-gap: 150px;
     justify-content: center;
+    @include md($hd) {
+      grid-gap: 40px;
+    }
+    @include md($desktop) {
+      grid-template-columns: repeat(3, 250px);
+    }
+    @include md($tablet-2) {
+      grid-template-columns: repeat(2, 300px);
+    }
+    @include md($tablet) {
+      display: block;
+    }
   }
 
   &__item {
@@ -1215,6 +1240,19 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    @include md($desktop) {
+      padding-top: 70px;
+    }
+    @include md($tablet) {
+      padding-top: 0;
+      padding-left: 60px;
+    }
+    &:not(:last-child) {
+      @include md($tablet) {
+        margin-bottom: 25px;
+      }
+    }
+
     &::before {
       content: "";
       background-position: center;
@@ -1225,6 +1263,16 @@
       position: absolute;
       top: 0;
       left: 0;
+      @include md($desktop) {
+        width: 52px;
+        height: 52px;
+      }
+      @include md($tablet) {
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
     &--safety {
       &::before {
@@ -1263,10 +1311,32 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 20px;
+    @include md($hd) {
+      font-size: 26px;
+    }
+    @include md($desktop) {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    @include md($phone) {
+      font-size: 18px;
+    }
+    @include land($height) {
+      font-size: 18px;
+    }
   }
 
   &__text {
     flex: 1 1 auto;
     font-size: 24px;
+    @include md($hd) {
+      font-size: 18px;
+    }
+    @include md($phone) {
+      font-size: 14px;
+    }
+    @include land($height) {
+      font-size: 14px;
+    }
   }
 }
