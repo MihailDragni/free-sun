@@ -113,7 +113,7 @@
   }
 
   &__link {
-    padding: 24px 42px;
+    padding: 20px 38px;
     border: none;
     align-self: center;
     border-radius: 46px;
@@ -1158,6 +1158,7 @@
   justify-content: center;
   align-items: center;
   &__body {
+    transform: translateY(-10vh);
     max-width: 900px;
     width: 100%;
     text-align: center;
@@ -1170,7 +1171,7 @@
   &__text {
     font-weight: 500;
     font-size: 32px;
-    @include line-clamp(3);
+    @include line-clamp(4);
 
     @include md($desktop) {
       font-size: 26px;
@@ -1211,11 +1212,6 @@
   }
 
   &__wrapper {
-    // display: flex;
-    // justify-content: space-between;
-    // max-width: 1576px;
-    // width: 100%;
-    // margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 350px);
     grid-row-gap: 70px;
@@ -1311,6 +1307,7 @@
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 20px;
+    @include line-clamp(2);
     @include md($hd) {
       font-size: 26px;
     }
@@ -1329,6 +1326,7 @@
   &__text {
     flex: 1 1 auto;
     font-size: 24px;
+    @include line-clamp(5);
     @include md($hd) {
       font-size: 18px;
     }
@@ -1340,3 +1338,49 @@
     }
   }
 }
+
+.work-stages {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  &__container {
+    padding-right: 0;
+  }
+  &__wrapper {
+    display: flex;
+  }
+
+  &__texts {
+    max-width: 400px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 42px;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 60px;
+  }
+  &__link {
+    border: 3px solid #ffffff;
+    color: #fff;
+    background-color: transparent;
+    align-self: flex-end;
+    &:hover {
+      border-color: #000;
+    }
+  }
+}
+
+
