@@ -1043,7 +1043,6 @@
     @include land($height) {
       margin-bottom: 20px;
     }
-
   }
 
   &__text {
@@ -1147,5 +1146,127 @@
       padding: 10px;
       font-size: 16px;
     }
+  }
+}
+
+.our-company {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__body {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 32px;
+    @include line-clamp(3);
+
+    @include md($desktop) {
+      font-size: 26px;
+    }
+
+    @include md($tablet-2) {
+      font-size: 22px;
+    }
+
+    @include land($height) {
+      font-size: 16px;
+    }
+
+    @include md($phone) {
+      font-size: 16px;
+    }
+  }
+}
+
+.our-benefits {
+  padding: 70px 0 60px;
+  &__title {
+    margin-bottom: 85px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    // display: flex;
+    // justify-content: space-between;
+    // max-width: 1576px;
+    // width: 100%;
+    // margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-row-gap: 70px;
+    grid-column-gap: 220px;
+    justify-content: center;
+  }
+
+  &__item {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &::before {
+      content: "";
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 82px;
+      width: 82px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &--safety {
+      &::before {
+        background-image: url("../images/svg-images/safety.svg");
+      }
+    }
+    &--economy {
+      &::before {
+        background-image: url("../images/svg-images/economy.svg");
+      }
+    }
+    &--paperwork {
+      &::before {
+        background-image: url("../images/svg-images/paperwork.svg");
+      }
+    }
+    &--calls {
+      &::before {
+        background-image: url("../images/svg-images/calls.svg");
+      }
+    }
+    &--fast-shipping {
+      &::before {
+        background-image: url("../images/svg-images/fast-shipping.svg");
+      }
+    }
+    &--tracking {
+      &::before {
+        background-image: url("../images/svg-images/tracking.svg");
+      }
+    }
+  }
+
+  &__name {
+    flex: 0 1 auto;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    font-size: 24px;
   }
 }
