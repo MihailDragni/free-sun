@@ -121,8 +121,8 @@
               <h1 class="solar-panel-calc__title h2">
                 Калькулятор для солнечных панелей
               </h1>
-              <div class="solar-panel-calc__wrapper">
-                <form class="range-slider" action="#">
+              <form class="solar-panel-calc__wrapper" action="#">
+                <div class="range-slider">
                   <label
                     class="range-slider__label calc-label"
                     for="range-slider"
@@ -140,13 +140,13 @@
                     data-from="540"
                   />
                   <span class="range-slider__value"></span>
-                </form>
+                </div>
                 <div class="solar-panel-calc__body">
                   <p class="solar-panel-calc__text">
                     *Эти данные только примерны, для точных подчетов нужна
                     помощь специалистов
                   </p>
-                  <form class="solar-panel-calc__form" action="#">
+                  <div class="solar-panel-calc__form">
                     <ul class="solar-panel-calc__row">
                       <li class="solar-panel-calc__item">
                         <label
@@ -258,9 +258,9 @@
                         />
                       </li>
                     </ul>
-                  </form>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </section>
         </main>

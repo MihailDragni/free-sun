@@ -13,12 +13,12 @@
   position: relative;
 
   &__title {
-    font-size: 36px;
     padding: 15px;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%);
+    text-align: center;
     @include line-clamp(4);
 
     @include land($height) {
@@ -27,7 +27,6 @@
     }
 
     @include md($tablet-2) {
-      max-width: 500px;
       width: 100%;
     }
 
@@ -42,21 +41,13 @@
         padding-top: 5px;
       }
 
-      @include md($tablet-2) {
+      @include md($desktop) {
         font-size: 18px;
-      }
-
-      @include md($tablet) {
-        font-size: 14px;
       }
     }
 
     @include md($hd) {
       text-align: center;
-    }
-
-    @include md($tablet) {
-      font-size: 24px;
     }
   }
 
@@ -277,7 +268,7 @@
   }
 
   &__bg {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -285,8 +276,8 @@
     flex: 1 0 auto;
 
     @include md($hd) {
-      height: 65vh;
       flex: 0 1 auto;
+      height: 45vh;
     }
   }
 
@@ -374,13 +365,22 @@
   background-color: #151515;
 
   &__wrapper {
-    height: 100vh;
+    height: auto;
+    padding: 165px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+    @include md($hd) {
+      padding: 120px 0;
+    }
+
+    @include md($desktop) {
+      padding: 0 0 70px;
+    }
+
     @include md($phone) {
-      height: 90vh;
+      padding: 0 0 50px;
     }
   }
 
@@ -391,43 +391,32 @@
     padding: 0 15px;
 
     @include md($hd) {
-      column-gap: 80px;
+      column-gap: 70px;
     }
 
     @include md($desktop) {
-      column-gap: 40px;
-      position: relative;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
   &__img {
-    background-image: url("../images/content/s-panel.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 635px;
-    height: 659px;
-
-    @include md($tablet-2) {
-      position: absolute;
-      opacity: 0.4;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    @include md($tablet) {
+    object-fit: cover;
+    object-position: center;
+    max-width: 635px;
+    width: 100%;
+    @include md($desktop) {
       width: 535px;
       height: 535px;
     }
 
-    @include land($height) {
-      width: 315px;
-      height: 315px;
+    @include md($tablet-2) {
+      width: 400px;
+      height: 400px;
     }
 
     @include md($phone) {
-      width: 315px;
-      height: 315px;
+      
     }
   }
 }
@@ -436,12 +425,15 @@
   flex: 1 1 auto;
   max-width: 530px;
   width: 100%;
+  @include md($desktop) {
+    max-width: none;
+  }
 
   &__title {
     color: #fff;
     margin-bottom: 60px;
 
-    @include md($tablet-2) {
+    @include md($desktop) {
       text-align: center;
     }
 
@@ -457,21 +449,18 @@
   &__list {
     display: flex;
     flex-flow: column wrap;
-    column-gap: 72px;
     height: 530px;
 
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // grid-column-gap: 72px;
-    @include md($tablet) {
-      column-gap: 0px;
-      height: 430px;
-      align-items: center;
+    @include md($desktop) {
+      height: 300px;
+      justify-content: flex-start;
+      column-gap: 30px;
     }
 
-    @include land($height) {
-      height: 230px;
-      column-gap: 0;
+    @include md($tablet) {
+      align-items: center;
+      height: 250px;
+      column-gap: 15px;
     }
   }
 
@@ -492,6 +481,9 @@
       position: absolute;
       top: 0;
       left: 0;
+      @include md($desktop) {
+        width: 80%;
+      }
     }
 
     @include md($tablet) {
@@ -647,8 +639,8 @@
   }
 
   &__wrapper {
-    max-width: 1350px;
-    width: 100%;
+    // max-width: 1350px;
+    // width: 100%;
     margin: 0 auto 60px;
   }
 
@@ -1036,7 +1028,7 @@
     padding-bottom: 20px;
     max-width: 1350px;
     width: 100%;
-    margin: 0 auto 45px;
+    margin-bottom: 45px;
     @include md($phone) {
       margin-bottom: 20px;
     }
@@ -1345,20 +1337,23 @@
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   &__container {
-    padding-right: 0;
+    padding-right: 15px;
   }
   &__wrapper {
     display: flex;
+    justify-content: space-between;
   }
 
   &__texts {
-    max-width: 400px;
-    width: 100%;
-
+    flex: 0 1 25%;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-right: 25px;
   }
 
   &__title {
@@ -1376,7 +1371,7 @@
     border: 3px solid #ffffff;
     color: #fff;
     background-color: transparent;
-    align-self: flex-end;
+    
     &:hover {
       border-color: #000;
     }
