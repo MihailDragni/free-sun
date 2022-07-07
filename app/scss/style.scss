@@ -173,10 +173,6 @@
     align-self: center;
 
     @include md($desktop) {
-      padding: 15px 32px;
-    }
-
-    @include md($phone) {
       padding: 10px 32px;
     }
 
@@ -293,6 +289,7 @@
 
     @include md($tablet-2) {
       font-size: 14px;
+      padding-bottom: 30px;
     }
 
     @include md($tablet) {
@@ -374,13 +371,19 @@
     @include md($hd) {
       padding: 120px 0;
     }
-
     @include md($desktop) {
+      padding: 80px 0;
+    }
+
+    @include md($tablet-2) {
       padding: 0 0 70px;
     }
 
     @include md($phone) {
-      padding: 0 0 50px;
+      padding: 0 0 60px;
+    }
+    @include land($height) {
+      padding: 0 0 60px;
     }
   }
 
@@ -394,7 +397,7 @@
       column-gap: 70px;
     }
 
-    @include md($desktop) {
+    @include md($tablet-2) {
       flex-direction: column;
       align-items: center;
     }
@@ -416,7 +419,12 @@
     }
 
     @include md($phone) {
-      
+      width: 300px;
+      height: 300px;
+    }
+    @include land($height) {
+      width: 300px;
+      height: 300px;
     }
   }
 }
@@ -433,8 +441,9 @@
     color: #fff;
     margin-bottom: 60px;
 
-    @include md($desktop) {
+    @include md($tablet-2) {
       text-align: center;
+      margin-bottom: 40px;
     }
 
     @include land($height) {
@@ -451,16 +460,19 @@
     flex-flow: column wrap;
     height: 530px;
 
-    @include md($desktop) {
+    @include md($tablet-2) {
       height: 300px;
       justify-content: flex-start;
+      align-items: center;
       column-gap: 30px;
     }
 
     @include md($tablet) {
-      align-items: center;
       height: 250px;
       column-gap: 15px;
+    }
+    @include md($phone) {
+      height: 350px;
     }
   }
 
@@ -486,7 +498,7 @@
       }
     }
 
-    @include md($tablet) {
+    @include md($desktop) {
       font-size: 14px;
       margin-bottom: 15px;
       max-width: 150px;
@@ -494,14 +506,19 @@
     }
 
     @include land($height) {
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 15px;
       max-width: 150px;
       width: 100%;
     }
 
-    @include md($tel) {
+    @include md($phone) {
       font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    @include md($tel) {
+      max-width: 130px;
     }
   }
 
@@ -517,6 +534,22 @@
     height: 60vh;
     display: flex;
     flex-direction: column;
+    @include md($desktop) {
+      height: auto;
+      padding: 80px 0;
+    }
+
+    @include md($tablet-2) {
+      padding: 0 0 70px;
+    }
+
+    @include md($phone) {
+      padding: 0 0 60px;
+    }
+
+    @include land($height) {
+      padding: 0 0 60px;
+    }
   }
 
   &__inner {
@@ -815,46 +848,62 @@
     }
   }
 
-  &__item {
+  &__list {
+    flex: 0 1 45%;
     &:first-child {
-      flex: 0 1 45%;
+      @include md($phone) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__item {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    font-size: 27px;
+    font-weight: 500;
+    &::after {
+      content: "";
+      background-image: radial-gradient(
+        circle,
+        currentcolor 1px,
+        transparent 1.5px
+        );
+      background-position: bottom;
+      background-size: 5px 5px;
+      background-repeat: repeat-x;
+      flex-grow: 1;
+      height: 1em;
+      order: 2;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include md($hd) {
+        margin-bottom: 20px;
+      }
 
       @include md($phone) {
         margin-bottom: 15px;
       }
     }
 
-    &:last-child {
-      flex: 0 1 45%;
+    @include md($hd) {
+      font-size: 22px;
     }
 
-    & p {
-      font-size: 27px;
-      font-weight: 500;
-      @include line-clamp(2);
+    @include md($tablet) {
+      font-size: 18px;
+    }
 
-      &:not(:last-child) {
-        margin-bottom: 30px;
-
-        @include md($hd) {
-          margin-bottom: 20px;
-        }
-
-        @include md($phone) {
-          margin-bottom: 15px;
-        }
+    & span {
+      &:first-child {
+        order: 1;
       }
-
-      @include md($hd) {
-        font-size: 22px;
-      }
-
-      @include md($tablet) {
-        font-size: 18px;
-      }
-
-      & span {
-        color: rgba(#000, 0.45);
+      &:last-child {
+        order: 3;
       }
     }
   }
@@ -1317,7 +1366,7 @@
 
   &__text {
     flex: 1 1 auto;
-    font-size: 24px;
+    font-size: 22px;
     @include line-clamp(5);
     @include md($hd) {
       font-size: 18px;
@@ -1371,11 +1420,9 @@
     border: 3px solid #ffffff;
     color: #fff;
     background-color: transparent;
-    
+
     &:hover {
       border-color: #000;
     }
   }
 }
-
-

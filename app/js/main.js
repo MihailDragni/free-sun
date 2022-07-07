@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const aboutUsSlider = new Swiper(".our-projects-slider", {
     slidesPerView: 1,
+    loop: true,
     spaceBetween: 20,
     grabCursor: true,
     navigation: {
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutPanelsSlider = new Swiper(".about-panels-slider", {
     slidesPerView: 1,
     spaceBetween: 20,
+    loop: true,
     grabCursor: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -60,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const seeMoreSlider = new Swiper(".see-more-projects__slider", {
-    spaceBetween: 15,
     grabCursor: true,
+    loop:true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 $(function () {
   let headerTop = $(".header");
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 20) {
+    if ($(this).scrollTop() > 1) {
       headerTop.addClass("header--active");
     } else {
       headerTop.removeClass("header--active");
