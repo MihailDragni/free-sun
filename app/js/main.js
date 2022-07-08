@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const seeMoreSlider = new Swiper(".see-more-projects__slider", {
     grabCursor: true,
-    loop:true,
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 2,
       },
     },
+  });
+
+  const stagesSleder = new Swiper(".stages-slider", {
+    spaceBetween: 40,
+    grabCursor: true,
+    loop: true,
   });
 
   // const mainPageSlider = new Swiper(".main-page__slider", {
@@ -118,12 +124,11 @@ $(function () {
     onStart: function (data) {
       $(".range-slider__value").text(data.from);
     },
-    onChange:function (data) {
+    onChange: function (data) {
       $(".range-slider__value").text(data.from);
-    }
+    },
   });
 });
-
 
 // $(document).ready(function () {
 //   $(".fullpage").fullpage({

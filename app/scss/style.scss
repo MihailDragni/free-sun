@@ -858,8 +858,8 @@
   }
 
   &__item {
-    white-space: nowrap;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     font-size: 27px;
     font-weight: 500;
@@ -869,7 +869,7 @@
         circle,
         currentcolor 1px,
         transparent 1.5px
-        );
+      );
       background-position: bottom;
       background-size: 5px 5px;
       background-repeat: repeat-x;
@@ -891,19 +891,34 @@
     }
 
     @include md($hd) {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     @include md($tablet) {
       font-size: 18px;
     }
 
+    @include md($phone) {
+      justify-content: flex-start;
+      &::after {
+        display: none;
+      }
+    }
+
     & span {
       &:first-child {
         order: 1;
+        color: rgba(0, 0, 0, 0.8);
+        @include md($phone) {
+          margin-right: 10px;
+          color: rgba(0, 0, 0, 0.5);
+        }
       }
       &:last-child {
         order: 3;
+        @include md($phone) {
+          font-size: 17px;
+        }
       }
     }
   }
@@ -934,7 +949,13 @@
       background-repeat: no-repeat;
       left: 0;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-50%) rotate(0);
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::before {
+        transform: translateY(-50%) rotate(90deg);
+      }
     }
 
     @include md($phone) {
@@ -1237,6 +1258,11 @@
   @include md($tablet) {
     padding: 50px 0;
   }
+
+  @include md($tel) {
+    padding: 40px 0;
+  }
+
   &__title {
     margin-bottom: 85px;
     text-align: center;
@@ -1256,8 +1282,7 @@
     display: grid;
     grid-template-columns: repeat(3, 350px);
     grid-row-gap: 70px;
-    grid-column-gap: 150px;
-    justify-content: center;
+    justify-content: space-evenly;
     @include md($hd) {
       grid-gap: 40px;
     }
@@ -1284,9 +1309,17 @@
       padding-top: 0;
       padding-left: 60px;
     }
+
+    @include md($tel) {
+      padding-left: 50px;
+    }
+
     &:not(:last-child) {
       @include md($tablet) {
         margin-bottom: 25px;
+      }
+      @include md($tel) {
+        margin-bottom: 15px;
       }
     }
 
@@ -1388,12 +1421,37 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include md($hd) {
+    height: auto;
+    padding: 120px 0;
+  }
+
+  @include md($desktop) {
+    padding: 100px 0;
+  }
+
+  @include md($tablet) {
+    padding: 80px 0;
+  }
+
+  @include md($phone) {
+    padding: 50px 0;
+  }
+
+  @include land($height) {
+    padding: 50px 0;
+  }
+
   &__container {
     padding-right: 15px;
   }
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    @include md($desktop) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__texts {
@@ -1403,11 +1461,21 @@
     flex-direction: column;
     justify-content: center;
     padding-right: 25px;
+    @include md($desktop) {
+      order: 2;
+      margin: 0;
+      align-items: center;
+      text-align: center;
+      padding-right: 0;
+    }
   }
 
   &__title {
     color: #fff;
     margin-bottom: 42px;
+    @include md($desktop) {
+      margin-bottom: 25px;
+    }
   }
 
   &__text {
@@ -1415,14 +1483,52 @@
     font-size: 26px;
     font-weight: 500;
     margin-bottom: 60px;
+    @include md($desktop) {
+      flex: 1 1 auto;
+    }
+    @include md($phone) {
+      font-size: 20px;
+    }
+    @include land($height) {
+      font-size: 20px;
+    }
   }
   &__link {
     border: 3px solid #ffffff;
     color: #fff;
     background-color: transparent;
+    @include md($desktop) {
+      align-self: center;
+    }
 
     &:hover {
       border-color: #000;
+    }
+  }
+
+  &__list {
+    display: flex;
+    @include md($desktop) {
+      order: 1;
+      justify-content: space-evenly;
+      margin-bottom: 60px;
+    }
+    @include md($tablet-2) {
+      margin-bottom: 40px;
+    }
+
+    @include md($tablet) {
+      display: none;
+    }
+  }
+
+  &__item {
+    flex: 0 1 391px;
+    @include md($desktop) {
+      flex: 0 1 auto;
+    }
+    &:not(:last-child) {
+      margin-right: 20px;
     }
   }
 }
