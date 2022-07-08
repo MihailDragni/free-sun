@@ -1532,3 +1532,25 @@
     }
   }
 }
+
+.box {
+  &__list {
+    display: flex;
+    padding: 30px;
+  }
+
+  &__item {
+    margin-right: 20px;
+    position: relative;
+    &::before {
+      content: '';
+      background-repeat: inherit;
+      position: absolute;
+      width: 150%;
+      height: 20px;
+      color: #c4c4c4;
+      font-size: 20px;
+
+    }
+  }
+}
