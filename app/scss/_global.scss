@@ -945,7 +945,6 @@ body {
     }
 
     @include md($tel) {
-
     }
   }
 
@@ -1011,6 +1010,16 @@ body {
     padding: 5px;
     margin: -5px;
     margin-bottom: 15px;
+  }
+}
+
+.contacts-info {
+  max-width: 560px;
+  padding: 25px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    flex: 0 1 250px;
   }
 }
 
@@ -1331,5 +1340,3 @@ body {
 .irs--flat .irs-max {
   display: none;
 }
-
-// background-image: radial-gradient(circle closest-corner at 25% 50%, #fff 50%, transparent);
