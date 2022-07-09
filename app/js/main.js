@@ -109,9 +109,23 @@ document.addEventListener("DOMContentLoaded", () => {
   //     prevEl: ".swiper-button-prev",
   //   },
   // });
+
+  // const relativeElem = document.querySelector(".our-merits__value").textContent;
+  // let bgElem = document.querySelector(".our-merits__bg");
+  // bgElem = value;
+  const relativeElem = document.querySelectorAll('.our-merits__value');
+  const bgElem = document.querySelectorAll('.our-merits__bg');
+
+  const copyText = (arr1, arr2) => {
+    for(let i = 0; i < arr1.length; i++) {
+      arr2[i].innerText = arr1[i].innerText;
+    }
+    return null;
+  }
+  copyText(relativeElem, bgElem);
 });
 
-$(function () {
+$(document).ready(function () {
   let headerTop = $(".header");
   $(window).scroll(function () {
     if ($(this).scrollTop() > 1) {
