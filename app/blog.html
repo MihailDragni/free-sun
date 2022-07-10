@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Sun | Свяжитесь с нами</title>
+    <title>Free Sun | Блог</title>
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="content">
-        <header class="header" style="background-color: #fff">
+        <header class="header">
           <div class="fullwidth-container">
             <nav class="header__nav">
               <a class="header__logo logo" href="#">
@@ -25,7 +25,7 @@
               </a>
               <ul class="header__menu menu">
                 <li class="menu__item">
-                  <a class="menu__link menu__link grey-effects" href="#"
+                  <a class="menu__link menu__link--active grey-effects" href="#"
                     >Главная</a
                   >
                 </li>
@@ -36,9 +36,7 @@
                   <a class="menu__link grey-effects" href="#">Наши проекты</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link menu__link--active grey-effects" href="#"
-                    >Контакты</a
-                  >
+                  <a class="menu__link grey-effects" href="#">Контакты</a>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link grey-effects" href="#">Блог</a>
@@ -117,174 +115,60 @@
           </div>
         </div>
         <main>
-          <section class="contacts">
+          <section class="blog">
             <div class="fixed-container">
-              <h1 class="contacts__title h2">Свяжитесь с нами</h1>
-              <div class="contacts__wrapper">
-                <ul class="contacts-info">
-                  <li class="contacts-info__item">
-                    <p class="contacts-info__title contacts-info__title--email">
-                      Email:
-                    </p>
-                    <a
-                      class="contacts-info__link"
-                      href="mailto:FreeSun005@mail.ru"
-                    >
-                      FreeSun005@mail.ru
-                    </a>
-                  </li>
-                  <li class="contacts-info__item">
-                    <p
-                      class="contacts-info__title contacts-info__title--location"
-                    >
-                      Наш офис:
-                    </p>
-                    <a class="contacts-info__link" href="#">
-                      ул.Ленина 65А г.Комрат
-                    </a>
-                    <a class="contacts-info__link" href="#">
-                      ул.Измаил 256 г.Кишинев
-                    </a>
-                  </li>
-                  <li class="contacts-info__item">
-                    <p class="contacts-info__title contacts-info__title--phone">
-                      Номера:
-                    </p>
-                    <a class="contacts-info__link" href="tel:067857647">
-                      067857647- Сергей
-                    </a>
-                    <a class="contacts-info__link" href="tel:067857647">
-                      067857647- Наталья
-                    </a>
-                    <a class="contacts-info__link" href="tel:067857647">
-                      067857647- Андрей
-                    </a>
-                  </li>
-                  <li class="contacts-info__item">
-                    <p
-                      class="contacts-info__title contacts-info__title--social"
-                    >
-                      Мы в соц.сетях:
-                    </p>
-                    <ul class="contacts-info__socials socials">
-                      <li class="socials__item">
-                        <a
-                          class="contacts-info__links socials__link socials__link--linkedin"
-                          href="#"
-                        ></a>
-                        <span class="sr-only">Линкедин</span>
-                      </li>
-                      <li class="socials__item">
-                        <a
-                          class="socials__link socials__link--instagram"
-                          href="#"
-                        ></a>
-                        <span class="sr-only">Инстаграм</span>
-                      </li>
-                      <li class="socials__item">
-                        <a
-                          class="socials__link socials__link--facebook"
-                          href="#"
-                        ></a>
-                        <span class="sr-only">Фэйсбук</span>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <form class="contacts-form" action="#">
-                  <h3 class="contacts-form__title h3">
-                    Оставьте заявку, если есть вопросы:
-                  </h3>
-                  <div class="contacts-form__wrapper">
-                    <ul class="contacts-form__inputs">
-                      <li class="contacts-form__item">
-                        <label class="contacts-form__label" for="name"
-                          >Имя</label
-                        >
-                        <input
-                          class="contacts-form__input field"
-                          type="text"
-                          name="Name"
-                          id="name"
-                          placeholder="Иван"
-                          required
-                        />
-                      </li>
-                      <li class="contacts-form__item">
-                        <label class="contacts-form__label" for="surname"
-                          >Фамилия</label
-                        >
-                        <input
-                          class="contacts-form__input field"
-                          type="text"
-                          name="Surname"
-                          id="surname"
-                          placeholder="Иванов"
-                          required
-                        />
-                      </li>
-                      <li class="contacts-form__item">
-                        <label class="contacts-form__label" for="Phone"
-                          >Номер телефона:</label
-                        >
-                        <input
-                          class="contacts-form__input field"
-                          type="number"
-                          name="Phone namber"
-                          id="Phone"
-                          placeholder="067857647"
-                        />
-                      </li>
-                      <li class="contacts-form__item">
-                        <label class="contacts-form__label" for="email"
-                          >Email:</label
-                        >
-                        <input
-                          class="contacts-form__input field"
-                          type="email"
-                          name="Email"
-                          id="email"
-                          placeholder="FreeSun005@mail.ru"
-                          required
-                        />
-                      </li>
-                      <li class="contacts-form__item">
-                        <label class="contacts-form__label" for="city"
-                          >Город/район:</label
-                        >
-                        <input
-                          class="contacts-form__input field"
-                          type="text"
-                          name="City/Region"
-                          id="city"
-                          placeholder="Кишинев"
-                        />
-                      </li>
-                    </ul>
-                    <div class="contacts-form__inner">
-                      <label class="contacts-form__label" for="textarea"
-                        >Вопрос/комментарий:</label
-                      >
-                      <textarea
-                        class="contacts-form__textarea field"
-                        name="Question"
-                        id="textarea"
-                        placeholder="Type here.."
-                      ></textarea>
+              <h1 class="blog__title h2">Блог</h1>
+              <p class="blog__subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing
+              </p>
+              <ul class="blog__wrapper">
+                <li class="blog__item">
+                  <article
+                    class="blog-cards"
+                    style="
+                      background-image: url('images/content/wind-farm.png');
+                    "
+                  >
+                    <div class="blog-cards__content">
+                      <p class="blog-cards__title">Рекомендуемое</p>
+                      <div class="blog-cards__text">
+                        Lorem ipsum dolor sit amet (consectetur adipiscing)
+                      </div>
+                      <a class="blog-cards__link" href="#"> Смотреть </a>
                     </div>
-                  </div>
-                  <div class="contacts-form__row">
-                    <div class="contacts-form__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Arcu amet, adipiscing tincidunt pellentesque sed
-                      adipiscing condimentum at.
+                  </article>
+                </li>
+                <li class="blog__item">
+                  <article
+                    class="blog-cards"
+                    style="background-image: url('images/content/earth.png')"
+                  >
+                    <div class="blog-cards__content">
+                      <p class="blog-cards__title">ARTICLES</p>
+                      <div class="blog-cards__text">
+                        Lorem ipsum dolor sit amet (consectetur adipiscing)
+                      </div>
+                      <a class="blog-cards__link" href="#"> Читать статью </a>
                     </div>
-                    <button class="contacts-form__button" type="submit">
-                      Отправить
-                    </button>
-                  </div>
-                </form>
-              </div>
+                  </article>
+                </li>
+                <li class="blog__item">
+                  <article
+                    class="blog-cards"
+                    style="
+                      background-image: url('images/content/education.png');
+                    "
+                  >
+                    <div class="blog-cards__content">
+                      <p class="blog-cards__title">VIDEO</p>
+                      <div class="blog-cards__text">
+                        Lorem ipsum dolor sit amet (consectetur adipiscing)
+                      </div>
+                      <a class="blog-cards__link" href="#"> Смотреть видео </a>
+                    </div>
+                  </article>
+                </li>
+              </ul>
             </div>
           </section>
         </main>

@@ -801,6 +801,7 @@
 
 .about-panels-description {
   padding: 30px 15px;
+  background-color: #fcfcfc;
 
   &__name {
     display: flex;
@@ -1819,6 +1820,48 @@
   &__wrapper {
     border-top: 1px solid rgba(196, 196, 196, 0.68);
   }
+}
+
+.blog {
+  background-color: rgba(196, 196, 196, 0.11);
+  padding: 140px 0 90px;
+
+  @include md($hd) {
+    padding: 120px 0 80px;
+  }
+
+  @include md($tablet-2) {
+    padding: 100px 0 60px;
+  }
+
+  @include md($tablet) {
+    padding-bottom: 80 0 50px;
+  }
+
+  @include md($phone) {
+    padding-bottom: 40px;
+  }
+
+  @include land($height) {
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 22px;
+    color: rgba(45, 45, 45, 0.57);
+    margin-bottom: 35px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
 }
 
 
