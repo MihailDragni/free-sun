@@ -1790,34 +1790,35 @@
 }
 
 .contacts {
-  padding: 140px 0 170px;
+  padding: 140px 0 90px;
 
   @include md($hd) {
-    padding: 120px 0;
+    padding: 120px 0 80px;
   }
 
   @include md($tablet-2) {
-    padding: 100px 0;
+    padding: 100px 0 60px;
   }
 
   @include md($tablet) {
-    padding-bottom: 80px;
+    padding-bottom: 80 0 50px;
   }
 
   @include md($phone) {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   @include land($height) {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   &__title {
     margin-bottom: 15px;
-
   }
 
   &__wrapper {
     border-top: 1px solid rgba(196, 196, 196, 0.68);
   }
 }
+
+

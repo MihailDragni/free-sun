@@ -321,6 +321,21 @@ body {
   }
 }
 
+.field {
+  background-color: rgba(196, 196, 196, 0.19);
+  border-radius: 25px;
+  outline: transparent;
+  border: none;
+  padding: 15px;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 25px;
+  &::placeholder {
+    color: #c4c4c4;
+  }
+}
+
 .grey-effects {
   transition: all 0.1s ease 0.1s;
   border-radius: 17px;
@@ -1016,10 +1031,241 @@ body {
 .contacts-info {
   max-width: 560px;
   padding: 25px 0 40px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 30px;
+  @include md($desktop) {
+    gap: 25px;
+  }
+  @include md($tablet-2) {
+    gap: 15px;
+  }
+
+  @include md($phone) {
+    grid-template-columns: repeat(1, 250px);
+    padding: 25px 0;
+  }
+  @include land($height) {
+    grid-template-columns: repeat(1, 250px);
+    padding: 25px 0;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 25px;
+    color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    @include md($desktop) {
+      font-size: 20px;
+    }
+    @include md($phone) {
+      font-size: 18px;
+    }
+    @include land($height) {
+      font-size: 18px;
+    }
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #000;
+      mask-size: cover;
+      mask-repeat: no-repeat;
+      @include md($desktop) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &--email {
+      &::before {
+        mask-image: url("../images/svg-images/email.svg");
+      }
+    }
+    &--location {
+      &::before {
+        mask-image: url("../images/svg-images/location.svg");
+      }
+    }
+    &--phone {
+      &::before {
+        mask-image: url("../images/svg-images/tel.svg");
+      }
+    }
+    &--social {
+      &::before {
+        mask-image: url("../images/svg-images/social.svg");
+      }
+    }
+  }
+
+  &__link {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.76);
+    font-weight: 500;
+    @include md($phone) {
+      font-size: 16px;
+    }
+    &:not(:last-child) {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__socials {
+    padding-top: 10px;
+    @include md($phone) {
+      padding-top: 5px;
+    }
+  }
+
+  &__links,
+  .socials__link {
+    width: 30px;
+    height: 30px;
+    &::after {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.contacts-form {
+  max-width: 1430px;
+  &__title {
+    margin-bottom: 30px;
+    @include md($phone) {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    margin-bottom: 60px;
+    column-gap: 70px;
+    @include md($hd) {
+      column-gap: 40px;
+    }
+    @include md($tablet-2) {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 25px;
+      margin-bottom: 35px;
+    }
+    @include md($tablet) {
+      margin-bottom: 25px;
+    }
+  }
+  &__inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 330px);
+    row-gap: 40px;
+    column-gap: 45px;
+    @include md($hd) {
+      grid-template-columns: repeat(2, 250px);
+      row-gap: 30px;
+      column-gap: 35px;
+    }
+    @include md($desktop) {
+      grid-template-columns: repeat(2, 220px);
+      column-gap: 25px;
+      row-gap: 25px;
+    }
+
+    @include md($tablet-2) {
+      grid-template-columns: repeat(3, 220px);
+      row-gap: 15px;
+    }
+
+    @include md($tablet) {
+      grid-template-columns: repeat(2, 220px);
+    }
+
+    @include md($phone) {
+      grid-template-columns: repeat(1, 290px);
+    }
+  }
   &__item {
-    flex: 0 1 250px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    flex: 1 0 auto;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 25px;
+    color: rgba(0, 0, 0, 0.61);
+    @include md($desktop) {
+      font-size: 20px;
+    }
+    @include md($tablet) {
+      font-size: 18px;
+    }
+  }
+
+  &__textarea {
+    width: 677px;
+    height: 230px;
+    resize: none;
+    @include md($hd) {
+      width: 550px;
+    }
+    @include md($desktop) {
+      width: 450px;
+    }
+    @include md($tablet-2) {
+      width: 100%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.58);
+    @include md($desktop) {
+      font-size: 18px;
+    }
+    @include md($tablet) {
+      flex-direction: column;
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    @include md($tablet) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    padding: 13px 82px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    @include md($desktop) {
+      padding: 11px 62px;
+    }
+    @include md($tablet-2) {
+      padding: 11px 38px;
+    }
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #595959;
+    }
   }
 }
 

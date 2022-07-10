@@ -121,7 +121,9 @@
               <div class="contacts__wrapper">
                 <ul class="contacts-info">
                   <li class="contacts-info__item">
-                    <p class="contacts-info__title">Email:</p>
+                    <p class="contacts-info__title contacts-info__title--email">
+                      Email:
+                    </p>
                     <a
                       class="contacts-info__link"
                       href="mailto:FreeSun005@mail.ru"
@@ -130,7 +132,22 @@
                     </a>
                   </li>
                   <li class="contacts-info__item">
-                    <p class="contacts-info__title">Номера:</p>
+                    <p
+                      class="contacts-info__title contacts-info__title--location"
+                    >
+                      Наш офис:
+                    </p>
+                    <a class="contacts-info__link" href="#">
+                      ул.Ленина 65А г.Комрат
+                    </a>
+                    <a class="contacts-info__link" href="#">
+                      ул.Измаил 256 г.Кишинев
+                    </a>
+                  </li>
+                  <li class="contacts-info__item">
+                    <p class="contacts-info__title contacts-info__title--phone">
+                      Номера:
+                    </p>
                     <a class="contacts-info__link" href="tel:067857647">
                       067857647- Сергей
                     </a>
@@ -142,20 +159,15 @@
                     </a>
                   </li>
                   <li class="contacts-info__item">
-                    <p class="contacts-info__title">Наш офис:</p>
-                    <a class="contacts-info__link" href="#">
-                      ул.Ленина 65А г.Комрат
-                    </a>
-                    <a class="contacts-info__link" href="#">
-                      ул.Измаил 256 г.Кишинев
-                    </a>
-                  </li>
-                  <li class="contacts-info__item">
-                    <p class="contacts-info__title">Мы в соц.сетях:</p>
-                    <ul class="socials">
+                    <p
+                      class="contacts-info__title contacts-info__title--social"
+                    >
+                      Мы в соц.сетях:
+                    </p>
+                    <ul class="contacts-info__socials socials">
                       <li class="socials__item">
                         <a
-                          class="socials__link socials__link--linkedin"
+                          class="contacts-info__links socials__link socials__link--linkedin"
                           href="#"
                         ></a>
                         <span class="sr-only">Линкедин</span>
@@ -177,6 +189,95 @@
                     </ul>
                   </li>
                 </ul>
+                <form class="contacts-form" action="#">
+                  <h3 class="contacts-form__title h3">
+                    Оставьте заявку, если есть вопросы:
+                  </h3>
+                  <div class="contacts-form__wrapper">
+                    <ul class="contacts-form__inputs">
+                      <li class="contacts-form__item">
+                        <label class="contacts-form__label" for="name"
+                          >Имя</label
+                        >
+                        <input
+                          class="contacts-form__input field"
+                          type="text"
+                          name="Name"
+                          id="name"
+                          placeholder="Иван"
+                          required
+                        />
+                      </li>
+                      <li class="contacts-form__item">
+                        <label class="contacts-form__label" for="surname"
+                          >Фамилия</label
+                        >
+                        <input
+                          class="contacts-form__input field"
+                          type="text"
+                          name="Surname"
+                          id="surname"
+                          placeholder="Иванов"
+                          required
+                        />
+                      </li>
+                      <li class="contacts-form__item">
+                        <label class="contacts-form__label" for="Phone"
+                          >Номер телефона:</label
+                        >
+                        <input
+                          class="contacts-form__input field"
+                          type="number"
+                          name="Phone namber"
+                          id="Phone"
+                          placeholder="067857647"
+                        />
+                      </li>
+                      <li class="contacts-form__item">
+                        <label class="contacts-form__label" for="email"
+                          >Email:</label
+                        >
+                        <input
+                          class="contacts-form__input field"
+                          type="email"
+                          name="Email"
+                          id="email"
+                          placeholder="FreeSun005@mail.ru"
+                          required
+                        />
+                      </li>
+                      <li class="contacts-form__item">
+                        <label class="contacts-form__label" for="city"
+                          >Город/район:</label
+                        >
+                        <input
+                          class="contacts-form__input field"
+                          type="text"
+                          name="City/Region"
+                          id="city"
+                          placeholder="Кишинев"
+                        />
+                      </li>
+                    </ul>
+                    <div class="contacts-form__inner">
+                      <label class="contacts-form__label" for="textarea">Вопрос/комментарий:</label>
+                      <textarea
+                        class="contacts-form__textarea field"
+                        name="Question"
+                        id="textarea"
+                        placeholder="Type here.."
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="contacts-form__row">
+                    <div class="contacts-form__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu amet, adipiscing tincidunt pellentesque sed adipiscing condimentum at.
+                    </div>
+                    <button class="contacts-form__button" type="submit">
+                      Отправить
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </section>
