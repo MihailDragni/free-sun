@@ -89,39 +89,29 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true,
   });
 
-  // const mainPageSlider = new Swiper(".main-page__slider", {
-  //   direction: "vertical",
-  //   sliderPerView: 1,
-  //   spaceBetween: 0,
-  //   mousewheel: true,
-  //   allowTouchMove: false,
-  //   autoHeight: true,
-  //   lazy: true,
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     clickable: true,
-  //     renderBullet: function (index, className) {
-  //       return `<span class="${className}"></span>`;
-  //     },
-  //   },
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  // });
+  const blogSlider = new Swiper(".blog-slider", {
+    spaceBetween: 40,
+    grabCursor: true,
+    loop: true,
+    breakpoints: {
+      320: {
+        pagination: {
+          el: ".blog-slider__pagination",
+          clickable: true,
+        },
+      },
+    },
+  });
 
-  // const relativeElem = document.querySelector(".our-merits__value").textContent;
-  // let bgElem = document.querySelector(".our-merits__bg");
-  // bgElem = value;
-  const relativeElem = document.querySelectorAll('.our-merits__value');
-  const bgElem = document.querySelectorAll('.our-merits__bg');
+  const relativeElem = document.querySelectorAll(".our-merits__value");
+  const bgElem = document.querySelectorAll(".our-merits__bg");
 
   const copyText = (arr1, arr2) => {
-    for(let i = 0; i < arr1.length; i++) {
+    for (let i = 0; i < arr1.length; i++) {
       arr2[i].innerText = arr1[i].innerText;
     }
     return null;
-  }
+  };
   copyText(relativeElem, bgElem);
 });
 
@@ -144,19 +134,17 @@ $(document).ready(function () {
   });
 });
 
+//скрипт плавный скролл
 // $(document).ready(function () {
-//   $(".fullpage").fullpage({
-//     //options here
-//     // autoScrolling: true,
-//     scrollHorizontally: true,
+//   $("#menu").on("click", "a", function (event) {
+//отменяем стандартную обработку нажатия по ссылке
+//     event.preventDefault();
+//забираем идентификатор бока с атрибута href
+//     var id = $(this).attr("href"),
+//узнаем высоту от начала страницы до блока на который ссылается якорь
+//       top = $(id).offset().top;
+//анимируем переход на расстояние - top за 1500 мс
+//     $("body,html").animate({ scrollTop: top }, 1500);
 //   });
-// });
-
-// document.addEventListener("click", function (e) {
-//   // const burgerMenuWrapper = document.querySelector('.burger-menu__wrapper')
-//   if (e.target !== burger && e.target !== burgerMenu) {
-//     burger.classList.remove("burger--active");
-//     burgerMenu.classList.remove("burger-menu--active");
-//     bodyLock.classList.remove("lock");
-//   }
+//   15;
 // });

@@ -913,6 +913,15 @@ body {
   }
 }
 
+.blog-slider {
+  display: none;
+  width: 485px;
+  height: 380px;
+  @include md($tablet-2) {
+    display: block;
+  }
+}
+
 .stage-cards {
   position: relative;
   &::before {
@@ -1004,14 +1013,29 @@ body {
 }
 
 .blog-cards {
-  width: 520px;
+  width: 485px;
   height: 380px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   border-radius: 40px;
+  display: flex;
   filter: drop-shadow(0 10px 45px rgba(0, 0, 0, 0.3));
+  @include md($hd) {
+    width: 350px;
+    height: 350px;
+  }
+  @include md($desktop) {
+    width: 300px;
+    height: 320px;
+  }
+
+  @include md($tablet-2) {
+    width: 485px;
+    height: 380px;
+    filter: none;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -1033,17 +1057,34 @@ body {
     position: relative;
     z-index: 3;
     padding: 45px 100px 30px 60px;
+    display: flex;
+    flex-direction: column;
+    @include md($hd) {
+      padding: 30px;
+    }
+    @include md($desktop) {
+      padding: 20px;
+    }
+    @include md($tablet-2) {
+      padding: 45px 100px 30px 60px;
+    }
   }
 
   &__title {
     margin-bottom: 35px;
     font-size: 14px;
+    @include md($desktop) {
+      font-size: 12px;
+    }
   }
 
   &__text {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 150px;
+    flex: 1 0 auto;
+    @include md($hd) {
+      font-size: 22px;
+    }
   }
 
   &__link {
@@ -1052,6 +1093,11 @@ body {
     color: #000;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.24);
     border-radius: 5px;
+    align-self: baseline;
+    white-space: nowrap;
+    @include md($desktop) {
+      padding: 10px 30px;
+    }
   }
 }
 
@@ -1098,7 +1144,6 @@ body {
     padding: 25px 0;
   }
   @include land($height) {
-    grid-template-columns: repeat(1, 250px);
     padding: 25px 0;
   }
 

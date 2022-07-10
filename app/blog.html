@@ -25,9 +25,7 @@
               </a>
               <ul class="header__menu menu">
                 <li class="menu__item">
-                  <a class="menu__link menu__link--active grey-effects" href="#"
-                    >Главная</a
-                  >
+                  <a class="menu__link grey-effects" href="#">Главная</a>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link grey-effects" href="#">О нас</a>
@@ -39,7 +37,9 @@
                   <a class="menu__link grey-effects" href="#">Контакты</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link grey-effects" href="#">Блог</a>
+                  <a class="menu__link menu__link--active grey-effects" href="#"
+                    >Блог</a
+                  >
                 </li>
               </ul>
               <ul class="change-language">
@@ -169,6 +169,59 @@
                   </article>
                 </li>
               </ul>
+              <div class="blog-slider swiper">
+                <ul class="blog-slider__wrapper swiper-wrapper">
+                  <li class="blog-slider__item swiper-slide">
+                    <article
+                      class="blog-cards"
+                      style="
+                        background-image: url('images/content/wind-farm.png');
+                      "
+                    >
+                      <div class="blog-cards__content">
+                        <p class="blog-cards__title">Рекомендуемое</p>
+                        <div class="blog-cards__text">
+                          Lorem ipsum dolor sit amet (consectetur adipiscing)
+                        </div>
+                        <a class="blog-cards__link" href="#"> Смотреть </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="blog-slider__item swiper-slide">
+                    <article
+                      class="blog-cards"
+                      style="background-image: url('images/content/earth.png')"
+                    >
+                      <div class="blog-cards__content">
+                        <p class="blog-cards__title">ARTICLES</p>
+                        <div class="blog-cards__text">
+                          Lorem ipsum dolor sit amet (consectetur adipiscing)
+                        </div>
+                        <a class="blog-cards__link" href="#"> Читать статью </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="blog-slider__item swiper-slide">
+                    <article
+                      class="blog-cards"
+                      style="
+                        background-image: url('images/content/education.png');
+                      "
+                    >
+                      <div class="blog-cards__content">
+                        <p class="blog-cards__title">VIDEO</p>
+                        <div class="blog-cards__text">
+                          Lorem ipsum dolor sit amet (consectetur adipiscing)
+                        </div>
+                        <a class="blog-cards__link" href="#">
+                          Смотреть видео
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+                <div class="blog-slider__pagination swiper-pagination"></div>
+              </div>
             </div>
           </section>
         </main>
