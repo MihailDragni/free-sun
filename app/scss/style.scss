@@ -363,7 +363,7 @@
 
   &__wrapper {
     height: auto;
-    padding: 165px 0;
+    padding: 140px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -461,7 +461,7 @@
     height: 530px;
 
     @include md($tablet-2) {
-      height: 300px;
+      height: 280px;
       justify-content: flex-start;
       align-items: center;
       column-gap: 30px;
@@ -531,7 +531,7 @@
   background-color: #151515;
 
   &__wrapper {
-    height: 60vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     @include md($desktop) {
@@ -672,17 +672,14 @@
   }
 
   &__wrapper {
-    // max-width: 1350px;
-    // width: 100%;
     margin: 0 auto 60px;
-  }
+    @include md($phone) {
+      margin-bottom: 30px;
+    }
 
-  @include md($phone) {
-    margin-bottom: 30px;
-  }
-
-  @include land($height) {
-    margin-bottom: 30px;
+    @include land($height) {
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -1822,30 +1819,32 @@
 
 .blog {
   background-color: rgba(196, 196, 196, 0.11);
-  padding: 140px 0 90px;
+  padding: 140px 0;
 
   @include md($hd) {
-    padding: 120px 0 80px;
+    padding: 120px 0;
   }
 
   @include md($tablet-2) {
-    padding: 100px 0 60px;
+    padding: 100px 0 70px;
   }
 
   @include md($tablet) {
-    padding-bottom: 80 0 50px;
+    padding: 80 0 50px;
   }
 
   @include md($phone) {
-    padding-bottom: 40px;
+    padding: 60px 0 40px;
   }
 
   @include land($height) {
-    padding-bottom: 40px;
+    padding: 60px 0 40px;
   }
 
   &__title {
     margin-bottom: 5px;
+    @include md($tablet-2) {
+    }
   }
 
   &__subtitle {
@@ -1853,6 +1852,23 @@
     font-size: 22px;
     color: rgba(45, 45, 45, 0.57);
     margin-bottom: 35px;
+    @include md($desktop) {
+      font-size: 18px;
+    }
+    @include md($tablet-2) {
+      text-align: center;
+    }
+    @include md($tablet) {
+      font-size: 16px;
+    }
+    @include md($phone) {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    @include land($height) {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
   }
 
   &__wrapper {
@@ -1862,7 +1878,162 @@
       display: none;
     }
   }
-  
 }
 
+.recommendations {
+  background-color: rgba(196, 196, 196, 0.11);
+  padding-left: 105px;
+  @include md($tablet-2) {
+    padding-left: 0;
+  }
+  &__wrapper {
+    display: flex;
+    @include md($tablet-2) {
+      justify-content: center;
+    }
+  }
 
+  &__item {
+    &:not(:last-child) {
+      margin-right: 130px;
+      @include md($tablet-2) {
+        margin-right: 80px;
+      }
+      @include md($tablet) {
+        margin-right: 60px;
+      }
+      @include md($phone) {
+        margin-right: 20px;
+      }
+      @include md($tel) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(48, 48, 48, 0.63);
+    padding: 0 0 35px 30px;
+    position: relative;
+    border-bottom: 5px solid transparent;
+    transition: all 0.2s;
+    @include md($desktop) {
+      font-size: 22px;
+      padding: 0 0 25px 25px;
+    }
+    @include md($tablet-2) {
+      font-size: 20px;
+    }
+
+    @include md($tablet) {
+      font-size: 18px;
+      padding: 0 0 15px 23px;
+    }
+    @include md($phone) {
+      font-size: 15px;
+    }
+    @include land($height) {
+      font-size: 15px;
+    }
+
+    @include md($tel) {
+      font-size: 14px;
+    }
+    &::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+      background-color: rgba(48, 48, 48, 0.63);
+      transition: all 0.2s;
+      @include md($desktop) {
+        width: 20px;
+        height: 20px;
+      }
+      @include md($tablet) {
+        width: 18px;
+        height: 18px;
+        top: 0;
+      }
+      @include md($tel) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &--recommendations {
+      &::before {
+        mask-image: url("../images/svg-images/star.svg");
+      }
+    }
+    &--articles {
+      &::before {
+        mask-image: url("../images/svg-images/document.svg");
+      }
+    }
+    &--videos {
+      &::before {
+        mask-image: url("../images/svg-images/play.svg");
+      }
+    }
+
+    &--active {
+      border-bottom: 5px solid rgba(3, 74, 166, 0.66);
+      color: rgba(3, 74, 166, 0.66);
+      &::before {
+        background-color: rgba(3, 74, 166, 0.66);
+      }
+    }
+
+    &:hover {
+      border-bottom: 5px solid rgba(3, 74, 166, 0.66);
+      color: rgba(3, 74, 166, 0.66);
+      &::before {
+        background-color: rgba(3, 74, 166, 0.66);
+      }
+    }
+  }
+}
+
+.recommended-articles {
+  background-color: #fff;
+  padding: 50px 0 34px;
+  @include md($tablet-2) {
+    padding: 40px 0 30px;
+  }
+  @include md($phone) {
+    padding: 35px 0;
+  }
+  @include land($height) {
+    padding: 35px 0;
+  }
+  &__list {
+    padding-bottom: 70px;
+    @include md($tablet-2) {
+      padding-bottom: 50px;
+    }
+    @include md($phone) {
+      padding-bottom: 30px;
+    }
+    @include land($height) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 35px;
+      @include md($tablet-2) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
